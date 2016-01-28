@@ -11,6 +11,7 @@ import byui.cit260.leavingPlanetEarth.model.NASA;
 import byui.cit260.leavingPlanetEarth.model.Parts;
 import byui.cit260.leavingPlanetEarth.model.Player;
 import byui.cit260.leavingPlanetEarth.model.StartLocation;
+import byui.cit260.leavingPlanetEarth.model.Tools;
 
 /**
  *
@@ -78,11 +79,19 @@ public class LeavingPlanetEarth {
         
         
         
+        Tools toolsOne = new Tools();
+        toolsOne.setAttachingPower(5.00);
+        toolsOne.setCuttingPower(5.00);
+        toolsOne.setCarryingPower(8.00);
+        toolsOne.setDiggingPower(4.00);
+        
+        String toolsInfo = toolsOne.toString();
+        System.out.println(toolsInfo);
+        
+        
         Parts partsOne = new Parts();
-        partsOne.setAttachingPower(5.00);
-        partsOne.setCuttingPower(5.00);
-        partsOne.setCarryingPower(8.00);
-        partsOne.setDiggingPower(4.00);
+        partsOne.setPowerSource("fuel");
+        partsOne.setLiftPower(100.00);
         
         String partsInfo = partsOne.toString();
         System.out.println(partsInfo);

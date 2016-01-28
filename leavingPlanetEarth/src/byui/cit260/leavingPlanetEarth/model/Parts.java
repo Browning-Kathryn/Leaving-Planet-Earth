@@ -6,61 +6,41 @@
 package byui.cit260.leavingPlanetEarth.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 /**
  *
  * @author OptimusPrime
  */
 public class Parts implements Serializable {
     // class instance variables
-    private double attachingPower;
-    private double cuttingPower;
-    private double carryingPower;
-    private double diggingPower;
+    private String powerSource;
+    private double liftPower;
 
     public Parts() {
     }
+
     
-    
-
-    public double getAttachingPower() {
-        return attachingPower;
+    public String getPowerSource() {
+        return powerSource;
     }
 
-    public void setAttachingPower(double attachingPower) {
-        this.attachingPower = attachingPower;
+    public void setPowerSource(String powerSource) {
+        this.powerSource = powerSource;
     }
 
-    public double getCuttingPower() {
-        return cuttingPower;
+    public double getLiftPower() {
+        return liftPower;
     }
 
-    public void setCuttingPower(double cuttingPower) {
-        this.cuttingPower = cuttingPower;
-    }
-
-    public double getCarryingPower() {
-        return carryingPower;
-    }
-
-    public void setCarryingPower(double carryingPower) {
-        this.carryingPower = carryingPower;
-    }
-
-    public double getDiggingPower() {
-        return diggingPower;
-    }
-
-    public void setDiggingPower(double diggingPower) {
-        this.diggingPower = diggingPower;
+    public void setLiftPower(double liftPower) {
+        this.liftPower = liftPower;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 71 * hash + (int) (Double.doubleToLongBits(this.attachingPower) ^ (Double.doubleToLongBits(this.attachingPower) >>> 32));
-        hash = 71 * hash + (int) (Double.doubleToLongBits(this.cuttingPower) ^ (Double.doubleToLongBits(this.cuttingPower) >>> 32));
-        hash = 71 * hash + (int) (Double.doubleToLongBits(this.carryingPower) ^ (Double.doubleToLongBits(this.carryingPower) >>> 32));
-        hash = 71 * hash + (int) (Double.doubleToLongBits(this.diggingPower) ^ (Double.doubleToLongBits(this.diggingPower) >>> 32));
+        hash = 97 * hash + Objects.hashCode(this.powerSource);
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.liftPower) ^ (Double.doubleToLongBits(this.liftPower) >>> 32));
         return hash;
     }
 
@@ -76,16 +56,10 @@ public class Parts implements Serializable {
             return false;
         }
         final Parts other = (Parts) obj;
-        if (Double.doubleToLongBits(this.attachingPower) != Double.doubleToLongBits(other.attachingPower)) {
+        if (Double.doubleToLongBits(this.liftPower) != Double.doubleToLongBits(other.liftPower)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.cuttingPower) != Double.doubleToLongBits(other.cuttingPower)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.carryingPower) != Double.doubleToLongBits(other.carryingPower)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.diggingPower) != Double.doubleToLongBits(other.diggingPower)) {
+        if (!Objects.equals(this.powerSource, other.powerSource)) {
             return false;
         }
         return true;
@@ -93,9 +67,7 @@ public class Parts implements Serializable {
 
     @Override
     public String toString() {
-        return "Parts{" + "attachingPower=" + attachingPower + ", cuttingPower=" + cuttingPower + ", carryingPower=" + carryingPower + ", diggingPower=" + diggingPower + '}';
+        return "Parts{" + "powerSource=" + powerSource + ", liftPower=" + liftPower + '}';
     }
-    
-    
-    
+
 }
