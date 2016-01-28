@@ -67,6 +67,8 @@ public class StartLocation implements Serializable {
             return false;
         }
         return Objects.equals(this.description, other.description);
+        
+        
     }
     
     

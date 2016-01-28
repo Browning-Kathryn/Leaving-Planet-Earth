@@ -5,6 +5,7 @@
  */
 package leavingplanetearth;
 
+import byui.cit260.leavingPlanetEarth.model.Desert;
 import byui.cit260.leavingPlanetEarth.model.Player;
 import byui.cit260.leavingPlanetEarth.model.StartLocation;
 
@@ -35,7 +36,22 @@ public class LeavingPlanetEarth {
         
         String locationInfo = locationOne.toString();
         System.out.println(locationInfo);
+        
+        
+        
+        Desert desertOne = new Desert();
+        
+        desertOne.setDescription("arid and sandy");
+        desertOne.setResourceType("Food");
+        desertOne.setHazards("Sand Storms");
+        desertOne.setTravelTime(12.00);
+        desertOne.setAmountAvailable(5.00);
+        
+        String desertInfo = desertOne.toString();
+        System.out.println(desertInfo);
     }
+    
+    
    
 }
    
