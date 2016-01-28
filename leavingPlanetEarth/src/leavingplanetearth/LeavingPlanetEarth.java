@@ -6,6 +6,7 @@
 package leavingplanetearth;
 
 import byui.cit260.leavingPlanetEarth.model.Desert;
+import byui.cit260.leavingPlanetEarth.model.NASA;
 import byui.cit260.leavingPlanetEarth.model.Player;
 import byui.cit260.leavingPlanetEarth.model.StartLocation;
 
@@ -49,6 +50,22 @@ public class LeavingPlanetEarth {
         
         String desertInfo = desertOne.toString();
         System.out.println(desertInfo);
+        
+        
+        
+        NASA nasaOne = new NASA();
+        
+        nasaOne.setDescription("Huge grey building with thousands of windows");
+        nasaOne.setResourceType("Tools");
+        nasaOne.setHazards("lightning Storms and Solar Bursts");
+        nasaOne.setTravelTime(1.00);
+        nasaOne.setAmountAvailable(2.00);
+        
+        String nasaInfo = nasaOne.toString();
+        System.out.println(nasaInfo);
+        
+        
+        
     }
     
     
