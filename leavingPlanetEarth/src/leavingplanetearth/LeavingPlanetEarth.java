@@ -6,6 +6,7 @@
 package leavingplanetearth;
 
 import byui.cit260.leavingPlanetEarth.model.Desert;
+import byui.cit260.leavingPlanetEarth.model.Food;
 import byui.cit260.leavingPlanetEarth.model.Inventory;
 import byui.cit260.leavingPlanetEarth.model.NASA;
 import byui.cit260.leavingPlanetEarth.model.Parts;
@@ -95,6 +96,15 @@ public class LeavingPlanetEarth {
         
         String partsInfo = partsOne.toString();
         System.out.println(partsInfo);
+        
+        
+        Food foodOne = new Food();
+        foodOne.setStrengthGiving("Protein");
+        foodOne.setEnergyGiving("Carbohydrates");
+        foodOne.setHydrating("Water");
+        
+        String foodInfo=foodOne.toString();
+        System.out.println(foodInfo);
     }
     
     
