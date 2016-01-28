@@ -8,6 +8,7 @@ package leavingplanetearth;
 import byui.cit260.leavingPlanetEarth.model.Desert;
 import byui.cit260.leavingPlanetEarth.model.Inventory;
 import byui.cit260.leavingPlanetEarth.model.NASA;
+import byui.cit260.leavingPlanetEarth.model.Parts;
 import byui.cit260.leavingPlanetEarth.model.Player;
 import byui.cit260.leavingPlanetEarth.model.StartLocation;
 
@@ -75,6 +76,16 @@ public class LeavingPlanetEarth {
         String inventoryInfo = inventoryOne.toString();
         System.out.println(inventoryInfo);
         
+        
+        
+        Parts partsOne = new Parts();
+        partsOne.setAttachingPower(5.00);
+        partsOne.setCuttingPower(5.00);
+        partsOne.setCarryingPower(8.00);
+        partsOne.setDiggingPower(4.00);
+        
+        String partsInfo = partsOne.toString();
+        System.out.println(partsInfo);
     }
     
     
