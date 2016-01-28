@@ -6,6 +6,7 @@
 package leavingplanetearth;
 
 import byui.cit260.leavingPlanetEarth.model.Player;
+import byui.cit260.leavingPlanetEarth.model.StartLocation;
 
 /**
  *
@@ -24,8 +25,18 @@ public class LeavingPlanetEarth {
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+    
+  
+
+       StartLocation locationOne= new StartLocation();
+        
+        locationOne.setDescription("Base Of Mountains");
+        locationOne.setTravelTime(7.00);
+        
+        String locationInfo = locationOne.toString();
+        System.out.println(locationInfo);
     }
-    
-    
-    
+   
 }
+   
+
