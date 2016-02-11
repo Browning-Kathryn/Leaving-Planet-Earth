@@ -105,4 +105,87 @@ public class InventoryControlTest {
      
     }
     
+     @Test
+    public void testCalcRations() {
+        System.out.println("\tTest case #R1");
+        double noPeople = 6.0;
+        double inventoryItem = 2.0;
+        InventoryControl instance = new InventoryControl();
+        double expResult = .333;
+        double result;
+        result = instance.calcRations(noPeople, inventoryItem);
+        assertEquals(expResult, result, 0.0001);
+     
+    }
+    {
+        System.out.println("\tTest case #R2");
+        double noPeople = -1;
+        double inventoryItem = 4.0;
+        InventoryControl instance = new InventoryControl();
+        double expResult = -1;
+        double result;
+        result = instance.calcRations(noPeople, inventoryItem);
+        assertEquals(expResult, result, 0.0001);
+     
+    }
+     {
+        System.out.println("\tTest case #R3");
+        double noPeople = 2;
+        double inventoryItem = 0.0;
+        InventoryControl instance = new InventoryControl();
+        double expResult = -1;
+        double result;
+        result = instance.calcRations(noPeople, inventoryItem);
+        assertEquals(expResult, result, 0.0001);
+     
+    }
+     
+    {
+        System.out.println("\tTest case #R4");
+        double noPeople = 3;
+        double inventoryItem = 200.0;
+        InventoryControl instance = new InventoryControl();
+        double expResult = -1;
+        double result;
+        result = instance.calcRations(noPeople, inventoryItem);
+        assertEquals(expResult, result, 0.0001);
+     
+    } 
+    
+    
+    {
+        System.out.println("\tTest case #R5");
+        double noPeople = 12;
+        double inventoryItem = 50.0;
+        InventoryControl instance = new InventoryControl();
+        double expResult = 4.167;
+        double result;
+        result = instance.calcRations(noPeople, inventoryItem);
+        assertEquals(expResult, result, 0.0001);
+     
+    } 
+    
+     {
+        System.out.println("\tTest case #R6");
+        double noPeople = 65;
+        double inventoryItem = 5.0;
+        InventoryControl instance = new InventoryControl();
+        double expResult = 0.077;
+        double result;
+        result = instance.calcRations(noPeople, inventoryItem);
+        assertEquals(expResult, result, 0.1);
+     
+    }
+     {
+        System.out.println("\tTest case #R7");
+        double noPeople = 20;
+        double inventoryItem = 100.0;
+        InventoryControl instance = new InventoryControl();
+        double expResult = 5.0;
+        double result;
+        result = instance.calcRations(noPeople, inventoryItem);
+        assertEquals(expResult, result, 0.1);
+     
+    }
+     
 }
