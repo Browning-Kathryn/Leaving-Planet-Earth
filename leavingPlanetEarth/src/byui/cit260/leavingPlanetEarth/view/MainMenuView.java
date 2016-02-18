@@ -40,6 +40,17 @@ public class MainMenuView {
           
     }
 
+    private static Input getInput(String input) {
+        if (input==null){
+            return null;
+        }
+        Input Input = new Input();
+        Input.setInput(input);
+        
+        return Input;
+    }
+
+   
    
     
 }

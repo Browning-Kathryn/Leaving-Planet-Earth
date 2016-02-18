@@ -16,6 +16,7 @@ import byui.cit260.leavingPlanetEarth.view.StartProgramView;
 public class leavingPlanetEarth {
     private static Game currentGame=null;
     private static Player player=null;
+    private static Input input = null;
     
     public static void main (String[] args){
       
@@ -39,8 +40,11 @@ public class leavingPlanetEarth {
         leavingPlanetEarth.player = player;
     }
 
+    public static void getInput(){
+       
+    }
     public static void setInput(Input input) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        leavingPlanetEarth.input = input;
     }
     
 }
