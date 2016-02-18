@@ -95,64 +95,12 @@ public class StartProgramView {
         System.out.println("\tWe hope you have a lot of fun!");
         System.out.println("=================================================");
     }
-      public String getInput() {
-        boolean valid = false;
-        String Input = null;
-        Scanner keyboard = new Scanner(System.in);
-
-        while (!valid) {
-
-            System.out.println("Select your menu option:");
-
-            Input = keyboard.nextLine();
-            Input = Input.trim();
-
-            if ("H"!=Input||"G"!=Input||"S"!=Input||"E"!=Input||"N"!=Input){
-                System.out.println("Invalid Entry - Must choose from Menu options");
-                continue;
-            }
-            break;
-        }
-        return Input;
-    }
       
-     public void doAction(char choice){
-         
-         switch (choice){
-             case'N':
-                 this.startNewGame();
-                 break;
-             case 'G':
-                 this.startExistingGame();
-                 break;
-             case 'H':
-                 this.displayHelpMenu();
-                 break;
-             case'S':
-                 this.saveGame();
-                 break;
-             case 'E':
-                 return;
-             default:
-                 System.out.println("\n*** Invalid selection *** Try Again");
-                 break;
-         }
-     } 
-
-    private void startNewGame() {
-        System.out.println("*** startNewGame function called ***");
-    }
-
-    private void startExistingGame() {
-        System.out.println("*** startExistingGame function called ***");
-    }
-
-    private void displayHelpMenu() {
-        System.out.println("*** displayHelpMenu function called ***");
-    }
-
-    private void saveGame() {
-        System.out.println("***saveGame function called ***");
-    }
+        
+    
       
+     
+     
+
+   
 }

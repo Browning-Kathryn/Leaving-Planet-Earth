@@ -5,8 +5,9 @@
  */
 package byui.cit260.leavingPlanetEarth.view;
 
-import byui.cit260.leavingPlanetEart.control.leavingPlanetEarth;
 
+import byui.cit260.leavingPlanetEart.control.leavingPlanetEarth;
+import java.util.Scanner;
 /**
  *
  * @author OptimusPrime
@@ -35,22 +36,78 @@ public class MainMenuView {
             selection = input.charAt(0); // get first character of string
             
             this.doAction(selection); // do action based on selection
+            
         } while(selection != 'E'); // an slection is not "Exit"
         
           
     }
 
-    private static Input getInput(String input) {
-        if (input==null){
-            return null;
+   
+
+   public String getInput() {
+        boolean valid = false;
+        String input = null;
+        Scanner keyboard = new Scanner(System.in);
+
+        while (!valid) {
+
+            System.out.println("Select your menu option:");
+
+            input = keyboard.nextLine();
+            input = input.trim();
+
+            if (input !="H" && input!="G" && input!="S" && input !="E" && input !="N"){
+                System.out.println("Invalid Entry - Must choose from Menu options");
+                continue;
+            }
+            break;
+   
         }
-        Input Input = new Input();
-        Input.setInput(input);
+        return input;
+   }
+   
         
-        return Input;
+        
+   
+    public void doAction(char choice){
+         
+         switch (choice){
+             case'N':
+                 this.startNewGame();
+                 break;
+             case 'G':
+                 this.startExistingGame();
+                 break;
+             case 'H':
+                 this.displayHelpMenu();
+                 break;
+             case'S':
+                 this.saveGame();
+                 break;
+             case 'E':
+                 return;
+             default:
+                 System.out.println("\n*** Invalid selection *** Try Again");
+                 break;
+         }
+
+   }
+    private void startNewGame() {
+        System.out.println("*** startNewGame function called ***");
     }
 
-   
+    private void startExistingGame() {
+        System.out.println("*** startExistingGame function called ***");
+    }
+
+    private void displayHelpMenu() {
+        System.out.println("*** displayHelpMenu function called ***");
+    }
+
+    private void saveGame() {
+        System.out.println("***saveGame function called ***");
+    }
+      
    
     
 }
