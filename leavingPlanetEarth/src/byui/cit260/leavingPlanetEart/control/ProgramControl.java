@@ -7,26 +7,23 @@ package byui.cit260.leavingPlanetEart.control;
 
 import byui.cit260.leavingPlanetEarth.model.Player;
 
-
-
 /**
  *
  * @author OptimusPrime
  */
-public class GameControl {
+public class ProgramControl {
 
     public static Player createPlayer(String name) {
-        
-        if (name == null) {
+       
+        if (name==null) {
             return null;
         }
         Player player = new Player();
-        player.setName((String) name);
+        player.setName(name);
         
         leavingPlanetEarth.setPlayer(player);
         
         return player;
     }
-   
     
 }
