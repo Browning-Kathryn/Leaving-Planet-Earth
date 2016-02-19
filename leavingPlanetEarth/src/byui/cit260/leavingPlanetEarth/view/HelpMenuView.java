@@ -20,7 +20,8 @@ public class HelpMenuView {
             +"\nF - How to find pieces of the rocket ship & food"
             +"\nL - How losing an hour of sun each day effects game play"
             +"\nT - Time regulation of fifteen days"
-            +"\nQ - Quit menu"
+            +"\nR - Return to Main Menu"
+            +"\nQ - Quit "
             +"\n----------------------------------------------------";
     
     public void displayMenu(){
@@ -83,6 +84,9 @@ public class HelpMenuView {
              case'T':
                  this.time();
                  break;
+             case'R':
+                 this.returnMain();
+                 break;
              case 'Q':
                  return;
              default:
@@ -111,6 +115,9 @@ public class HelpMenuView {
         System.out.println("You only have 15 days to solve the game. Move quickly or you may have to start over");
     }
     
-    
+    private void returnMain(){
+         MainMenuView Menu = new MainMenuView();
+        Menu.displayMenu();
+    }
     
 }
