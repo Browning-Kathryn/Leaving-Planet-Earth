@@ -5,25 +5,22 @@
  */
 package byui.cit260.leavingPlanetEarth.view;
 
-
-import byui.cit260.leavingPlanetEart.control.GameControl;
-import byui.cit260.leavingPlanetEart.control.leavingPlanetEarth;
 import java.util.Scanner;
 /**
  *
  * @author OptimusPrime
  */
-public class MainMenuView {
-
-    private final String MENU = "\n"
+public class HelpMenuView {
+     private final String MENU = "\n"
             +"\n---------------------------------------------------"
-            +"\n| Main Menu                                       |"
+            +"\n| Help Menu                                       |"
             +"\n---------------------------------------------------"
-            +"\nG - Start Game"
-            +"\nH - Get help on how to play the game"
-            +"\nS - Save game"
-            +"\nE - Exit"
-            +"\nN - New game"
+            +"\nM - How to Move"
+            +"\nB - How to Build a Shelter"
+            +"\nF - How to find pieces of the rocket ship & food"
+            +"\nL - How losing an hour of sun each day effects game play"
+            +"\nT - Time regulation of fifteen days"
+            +"\nQ - Quit menu"
             +"\n----------------------------------------------------";
     
     public void displayMenu(){
@@ -40,12 +37,10 @@ public class MainMenuView {
             
         } while(selection != 'E'); // an slection is not "Exit"
         
-          
+       
     }
-
-   
-
-   public String getInput() {
+    
+     public String getInput() {
         boolean valid = false;
         String input = null;
         Scanner keyboard = new Scanner(System.in);
@@ -73,19 +68,22 @@ public class MainMenuView {
     public void doAction(char selection){
          
          switch (selection){
-             case'N':
-                 this.startNewGame();
+             case'M':
+                 this.startMove();
                  break;
-             case 'G':
-                 this.startExistingGame();
+             case 'B':
+                 this.startBuildShelter();
                  break;
-             case 'H':
-                 this.displayHelpMenu();
+             case 'F':
+                 this.startFind();
                  break;
-             case'S':
-                 this.saveGame();
+             case'L':
+                 this.losingTime();
                  break;
-             case 'E':
+             case'T':
+                 this.time();
+                 break;
+             case 'Q':
                  return;
              default:
                  System.out.println("\n*** Invalid selection *** Try Again");
@@ -93,26 +91,26 @@ public class MainMenuView {
          }
 
    }
-    private void startNewGame() {
-        GameControl.creatNewGame(leavingPlanetEarth.getPlayer());
-        
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+    private void startMove() {
+        System.out.println("\n*** You move through the board by using the arrow keys on your keyboard.");
     }
 
-    private void startExistingGame() {
-        System.out.println("*** startExistingGame function called ***");
+    private void startBuildShelter() {
+        System.out.println("*** You can build the shelter using any tools and supplies that you have picked up along the way");
     }
 
-    private void displayHelpMenu() {
-        HelpMenuView Menu = new HelpMenuView();
-        Menu.displayMenu();
+    private void startFind() {
+        System.out.println("*** You can find pieces of the rocket ship and food as you journey through the desert. They will be marked in various colors ***");
     }
 
-    private void saveGame() {
-        System.out.println("***saveGame function called ***");
+    private void losingTime() {
+        System.out.println("***Every day you lose one hour of sunshine and you cannot go outside at night or the game is over. You will need to plan your time accordingly. ***");
     }
-      
-
+    
+    private void time(){
+        System.out.println("You only have 15 days to solve the game. Move quickly or you may have to start over");
+    }
+    
+    
     
 }
