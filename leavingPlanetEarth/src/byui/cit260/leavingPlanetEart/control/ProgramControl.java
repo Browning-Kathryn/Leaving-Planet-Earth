@@ -14,16 +14,16 @@ import byui.cit260.leavingPlanetEarth.model.Player;
 public class ProgramControl {
 
     public static Player createPlayer(String name) {
-       
-        if (name==null) {
+
+        if (name == null) {
             return null;
         }
         Player player = new Player();
         player.setName(name);
-        
+
         leavingPlanetEarth.setPlayer(player);
-        
+
         return player;
     }
-    
+
 }

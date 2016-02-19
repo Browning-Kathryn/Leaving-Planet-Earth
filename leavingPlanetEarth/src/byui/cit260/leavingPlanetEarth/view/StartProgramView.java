@@ -27,16 +27,16 @@ public class StartProgramView {
 
         //prompt the player to enter their name Retrieve the name of the player
         String playersName = this.getPlayersName();
-        
+
         //create and save the player object
         Player player = ProgramControl.createPlayer(playersName);
-        
+
         //display a personalized welcome message this.displayWelcomeMessage(player);
         this.displayWelcomeMessage(player);
 
-       //Display the main menu.
-       MainMenuView mainMenu =  new MainMenuView();
-       mainMenu.displayMenu();
+        //Display the main menu.
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMenu();
     }
 
     public void displayBanner() {
@@ -88,19 +88,12 @@ public class StartProgramView {
         }
         return playersName;
     }
-    
-    public void displayWelcomeMessage (Player player){
+
+    public void displayWelcomeMessage(Player player) {
         System.out.println("\n\n=============================================");
         System.out.println("\tWelcome to the game " + player.getName());
         System.out.println("\tWe hope you have a lot of fun!");
         System.out.println("=================================================");
     }
-      
-        
-    
-      
-     
-     
 
-   
 }

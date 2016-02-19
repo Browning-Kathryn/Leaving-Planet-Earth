@@ -14,14 +14,15 @@ import byui.cit260.leavingPlanetEarth.view.StartProgramView;
  * @author OptimusPrime
  */
 public class leavingPlanetEarth {
-    private static Game currentGame=null;
-    private static Player player=null;
+
+    private static Game currentGame = null;
+    private static Player player = null;
     private static Input input = null;
-    
-    public static void main (String[] args){
-      
-    StartProgramView startProgramView = new StartProgramView();
-    startProgramView.startProgram();
+
+    public static void main(String[] args) {
+
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.startProgram();
     }
 
     public static Game getCurrentGame() {
@@ -40,11 +41,12 @@ public class leavingPlanetEarth {
         leavingPlanetEarth.player = player;
     }
 
-    public static void getInput(){
-       
+    public static void getInput() {
+
     }
+
     public static void setInput(Input input) {
         leavingPlanetEarth.input = input;
     }
-    
+
 }
