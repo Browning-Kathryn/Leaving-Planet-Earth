@@ -3,23 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.leavingPlanetEart.control;
-
-import byui.cit260.leavingPlanetEarth.model.Player;
-
-
+package byui.cit260.leavingPlanetEarth.view;
 
 /**
  *
  * @author OptimusPrime
  */
-public class GameControl {
+public class GameMenuView {
 
-    public static void creatNewGame(Player player) {
+    public void displayMenu() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    
-   
     
 }

@@ -6,6 +6,7 @@
 package byui.cit260.leavingPlanetEarth.view;
 
 
+import byui.cit260.leavingPlanetEart.control.GameControl;
 import byui.cit260.leavingPlanetEart.control.leavingPlanetEarth;
 import java.util.Scanner;
 /**
@@ -56,8 +57,8 @@ public class MainMenuView {
             input = keyboard.nextLine();
             input = input.trim();
 
-            if (input !="H" && input!="G" && input!="S" && input !="E" && input !="N"){
-                System.out.println("Invalid Entry - Must choose from Menu options");
+            if (input.length()<1){
+                System.out.println("Invalid Entry - Must not be blank");
                 continue;
             }
             break;
@@ -69,9 +70,9 @@ public class MainMenuView {
         
         
    
-    public void doAction(char choice){
+    public void doAction(char selection){
          
-         switch (choice){
+         switch (selection){
              case'N':
                  this.startNewGame();
                  break;
@@ -93,7 +94,10 @@ public class MainMenuView {
 
    }
     private void startNewGame() {
-        System.out.println("*** startNewGame function called ***");
+        GameControl.creatNewGame(leavingPlanetEarth.getPlayer());
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
 
     private void startExistingGame() {
@@ -108,6 +112,6 @@ public class MainMenuView {
         System.out.println("***saveGame function called ***");
     }
       
-   
+
     
 }
