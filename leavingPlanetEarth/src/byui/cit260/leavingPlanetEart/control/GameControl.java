@@ -15,11 +15,14 @@ import byui.cit260.leavingPlanetEarth.model.Player;
  */
 public class GameControl {
 
-    public static void creatNewGame(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static int createNewGame(Player player) {
+     if(player ==null){
+         return -1;
+     }
+     Game game = new Game();
+     
+     return 1;
     }
-
-    
    
     
 }

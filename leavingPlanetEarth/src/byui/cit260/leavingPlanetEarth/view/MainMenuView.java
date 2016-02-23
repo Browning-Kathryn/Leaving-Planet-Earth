@@ -89,10 +89,13 @@ public class MainMenuView {
     }
 
     private void startNewGame() {
-        GameControl.creatNewGame(leavingPlanetEarth.getPlayer());
+        int value = GameControl.createNewGame(leavingPlanetEarth.getPlayer());
+        if (value < 0) {
+            System.out.println("ERROR-Failed to create new game");
+        }
 
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        GameMenuView Menu = new GameMenuView();
+        Menu.displayMenu();
     }
 
     private void startExistingGame() {
