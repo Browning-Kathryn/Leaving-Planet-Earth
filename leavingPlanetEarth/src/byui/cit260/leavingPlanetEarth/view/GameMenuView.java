@@ -149,7 +149,8 @@ public class GameMenuView {
     }
 
     private void movePerson() {
-        System.out.println("*** Move Person ***");
+        MovePersonView Menu = new MovePersonView();
+        Menu.displayMenu();
     }
     
     private void startSleep() {
