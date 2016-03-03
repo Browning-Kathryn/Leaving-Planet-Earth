@@ -4,23 +4,26 @@
  * and open the template in the editor.
  */
 package byui.cit260.leavingPlanetEarth.view;
+
 import java.util.Scanner;
+
 /**
  *
  * @author OptimusPrime
  */
 public abstract class View implements ViewInterface {
+
     protected String displayMessage;
-    
-    public View(){
+
+    public View() {
     }
-    
-    public View(String message){
+
+    public View(String message) {
         this.displayMessage = message;
     }
-    
+
     @Override
-    public void display(){
+    public void display() {
         char selection = ' ';
         do {
 
@@ -33,30 +36,27 @@ public abstract class View implements ViewInterface {
 
         } while (selection != 'E'); // an slection is not "Exit"
 
-    
-       
     }
-    
-    @Override 
-    public String getInput(){
+
+    @Override
+    public String getInput() {
         Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
         String value = null;
-        
-        while(!valid){
-            
+
+        while (!valid) {
+
             System.out.println("\n" + this.displayMessage);
-            
+
             value = keyboard.nextLine();
             value = value.trim();
-            
-            if(value.length()<1){
+
+            if (value.length() < 1) {
                 System.out.println("\n*** You must enter a value ***");
                 continue;
             }
             break;
         }
-    return value;
+        return value;
+    }
 }
-}
-

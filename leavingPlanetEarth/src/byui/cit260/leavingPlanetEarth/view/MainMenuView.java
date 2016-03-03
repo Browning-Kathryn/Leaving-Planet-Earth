@@ -13,22 +13,22 @@ import java.util.Scanner;
  *
  * @author OptimusPrime
  */
-public class MainMenuView extends View{
-    
-    public MainMenuView(){
-        super("\n"
-            + "\n---------------------------------------------------"
-            + "\n| Main Menu                                       |"
-            + "\n---------------------------------------------------"
-            + "\nG - Start Game"
-            + "\nH - Get help on how to play the game"
-            + "\nS - Save game"
-            + "\nE - Exit"
-            + "\nN - New game"
-            + "\n----------------------------------------------------");
+public class MainMenuView extends View {
 
-}
-   
+    public MainMenuView() {
+        super("\n"
+                + "\n---------------------------------------------------"
+                + "\n| Main Menu                                       |"
+                + "\n---------------------------------------------------"
+                + "\nG - Start Game"
+                + "\nH - Get help on how to play the game"
+                + "\nS - Save game"
+                + "\nE - Exit"
+                + "\nN - New game"
+                + "\n----------------------------------------------------");
+
+    }
+
     public void doAction(char selection) {
 
         switch (selection) {

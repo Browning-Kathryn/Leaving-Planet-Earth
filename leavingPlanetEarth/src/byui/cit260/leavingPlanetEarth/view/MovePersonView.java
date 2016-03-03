@@ -12,21 +12,20 @@ import java.util.Scanner;
  * @author OptimusPrime
  */
 public class MovePersonView extends View {
-    
-           public MovePersonView(){
-            super("\n"
-            + "\n---------------------------------------------------"
-            + "\n| Where would you like to go?                     |"
-            + "\n---------------------------------------------------"
-            + "\nD - Desert"
-            + "\nN - Nasa"
-            + "\nP - Planet Nefthar"
-            + "\nR - Return to Main Menu"
-            + "\nE - Quit "
-            + "\n----------------------------------------------------");
-           }
 
-   
+    public MovePersonView() {
+        super("\n"
+                + "\n---------------------------------------------------"
+                + "\n| Where would you like to go?                     |"
+                + "\n---------------------------------------------------"
+                + "\nD - Desert"
+                + "\nN - Nasa"
+                + "\nP - Planet Nefthar"
+                + "\nR - Return to Main Menu"
+                + "\nE - Quit "
+                + "\n----------------------------------------------------");
+    }
+
     public void doAction(char selection) {
 
         switch (selection) {
@@ -49,9 +48,9 @@ public class MovePersonView extends View {
                 break;
         }
 
-    } 
-    
-      private void Desert() {
+    }
+
+    private void Desert() {
         System.out.println("\n*** Welcome to the desert.You must spend your time here collecting parts and tools to build your rocket.");
     }
 
@@ -67,7 +66,5 @@ public class MovePersonView extends View {
         MainMenuView Menu = new MainMenuView();
         Menu.display();
     }
-    
-    
-    
+
 }

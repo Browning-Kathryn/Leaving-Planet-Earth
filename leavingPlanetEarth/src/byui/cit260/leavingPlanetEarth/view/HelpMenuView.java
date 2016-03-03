@@ -11,24 +11,23 @@ import java.util.Scanner;
  *
  * @author OptimusPrime
  */
-public class HelpMenuView extends View{
+public class HelpMenuView extends View {
 
-   public HelpMenuView(){
-      super ("\n"
-            + "\n---------------------------------------------------"
-            + "\n| Help Menu                                       |"
-            + "\n---------------------------------------------------"
-            + "\nM - How to Move"
-            + "\nB - How to Build a Shelter"
-            + "\nF - How to find pieces of the rocket ship & food"
-            + "\nL - How losing an hour of sun each day effects game play"
-            + "\nT - Time regulation of fifteen days"
-            + "\nR - Return to Main Menu"
-            + "\nE - Quit "
-            + "\n----------------------------------------------------");
+    public HelpMenuView() {
+        super("\n"
+                + "\n---------------------------------------------------"
+                + "\n| Help Menu                                       |"
+                + "\n---------------------------------------------------"
+                + "\nM - How to Move"
+                + "\nB - How to Build a Shelter"
+                + "\nF - How to find pieces of the rocket ship & food"
+                + "\nL - How losing an hour of sun each day effects game play"
+                + "\nT - Time regulation of fifteen days"
+                + "\nR - Return to Main Menu"
+                + "\nE - Quit "
+                + "\n----------------------------------------------------");
 
-   }
-   
+    }
 
     public void doAction(char selection) {
 

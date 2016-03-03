@@ -10,9 +10,11 @@ package byui.cit260.leavingPlanetEarth.view;
  * @author OptimusPrime
  */
 public interface ViewInterface {
-    
+
     public void display();
+
     public String getInput();
+
     public void doAction(char selection);
-    
+
 }
