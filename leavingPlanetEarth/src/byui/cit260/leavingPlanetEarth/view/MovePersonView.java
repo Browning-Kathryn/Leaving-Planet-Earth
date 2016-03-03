@@ -101,7 +101,7 @@ public class MovePersonView {
 
     private void returnMain() {
         MainMenuView Menu = new MainMenuView();
-        Menu.displayMenu();
+        Menu.display();
     }
     
     
