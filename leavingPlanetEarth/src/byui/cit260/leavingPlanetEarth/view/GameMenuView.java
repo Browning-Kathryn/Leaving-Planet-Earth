@@ -31,7 +31,7 @@ public class GameMenuView extends View {
             + "\nG - Gather supplies"
             + "\nO - Pick up Object"
             + "\nR - Return" 
-            + "\nQ - Quit "
+            + "\nE - Quit "
             + "\n----------------------------------------------------");
     
     }
@@ -88,7 +88,7 @@ public class GameMenuView extends View {
             case 'R':
                 this.returnMain();
                 break;
-            case 'Q':
+            case 'E':
                 return;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
@@ -115,7 +115,7 @@ public class GameMenuView extends View {
 
     private void movePerson() {
         MovePersonView Menu = new MovePersonView();
-        Menu.displayMenu();
+        Menu.display();
     }
     
     private void startSleep() {

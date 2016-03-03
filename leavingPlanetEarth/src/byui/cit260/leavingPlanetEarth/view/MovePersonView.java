@@ -11,9 +11,10 @@ import java.util.Scanner;
  *
  * @author OptimusPrime
  */
-public class MovePersonView {
+public class MovePersonView extends View {
     
-     private final String MENU = "\n"
+           public MovePersonView(){
+            super("\n"
             + "\n---------------------------------------------------"
             + "\n| Where would you like to go?                     |"
             + "\n---------------------------------------------------"
@@ -22,47 +23,10 @@ public class MovePersonView {
             + "\nP - Planet Nefthar"
             + "\nR - Return to Main Menu"
             + "\nE - Quit "
-            + "\n----------------------------------------------------";
+            + "\n----------------------------------------------------");
+           }
 
-      public void displayMenu() {
-
-        char selection = ' ';
-        do {
-
-            System.out.println(MENU);//display the main menu
-
-            String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0); // get first character of string
-
-            this.doAction(selection); // do action based on selection
-
-        } while (selection != 'E'); // an slection is not "Exit"
-
-    }
-
-    public String getInput() {
-        boolean valid = false;
-        String input = null;
-        Scanner keyboard = new Scanner(System.in);
-
-        while (!valid) {
-
-            System.out.println("Select your menu option:");
-
-            input = keyboard.nextLine();
-            input = input.trim();
-
-            if (input.length() < 1) {
-                System.out.println("Invalid Entry - Must not be blank");
-         
-           
-                continue;
-            }
-            break;
-
-        }
-        return input;
-    }
+   
     public void doAction(char selection) {
 
         switch (selection) {
