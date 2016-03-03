@@ -21,7 +21,7 @@ public class MovePersonView {
             + "\nN - Nasa"
             + "\nP - Planet Nefthar"
             + "\nR - Return to Main Menu"
-            + "\nQ - Quit "
+            + "\nE - Quit "
             + "\n----------------------------------------------------";
 
       public void displayMenu() {
@@ -78,7 +78,7 @@ public class MovePersonView {
             case 'R':
                 this.returnMain();
                 break;
-            case 'Q':
+            case 'E':
                 return;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
