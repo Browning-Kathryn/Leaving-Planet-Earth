@@ -6,75 +6,38 @@
 package byui.cit260.leavingPlanetEarth.view;
 
 import java.util.Scanner;
+
 /**
  *
  * @author OptimusPrime
  */
-public class GameMenuView {
+public class GameMenuView extends View {
 
-     private final String MENU = "\n"
-            + "\n---------------------------------------------------"
-            + "\n| Game Menu                                       |"
-            + "\n---------------------------------------------------"
-            + "\nV - View Map"
-            + "\nC - Construct Shelter"
-            + "\nI - View inventory for food"
-            + "\nX - Check progress on a rocket ship"
-            + "\nM - Move Person"
-            + "\nS - Sleep"
-            + "\nP - Pack rocket ship"
-            + "\nL - Launch rocket ship"
-            + "\nH - Help"
-            + "\nW - Work on rocket ship"
-            + "\nT - Use a tool"
-            + "\nB - Look at tool belt and select tool"
-            + "\nG - Gather supplies"
-            + "\nO - Pick up Object"
-            + "\nR - Return" 
-            + "\nQ - Quit "
-            + "\n----------------------------------------------------";
-    
-    
-    
-    public void displayMenu() {
-        
-        char selection = ' ';
-        do {
-
-            System.out.println(MENU);//display the main menu
-
-            String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0); // get first character of string
-
-            this.doAction(selection); // do action based on selection
-
-        } while (selection != 'E'); // an slection is not "Exit"
+    public GameMenuView() {
+        super("\n"
+                + "\n---------------------------------------------------"
+                + "\n| Game Menu                                       |"
+                + "\n---------------------------------------------------"
+                + "\nV - View Map"
+                + "\nC - Construct Shelter"
+                + "\nI - View inventory for food"
+                + "\nX - Check progress on a rocket ship"
+                + "\nM - Move Person"
+                + "\nS - Sleep"
+                + "\nP - Pack rocket ship"
+                + "\nL - Launch rocket ship"
+                + "\nH - Help"
+                + "\nW - Work on rocket ship"
+                + "\nT - Use a tool"
+                + "\nB - Look at tool belt and select tool"
+                + "\nG - Gather supplies"
+                + "\nO - Pick up Object"
+                + "\nR - Return"
+                + "\nE - Quit "
+                + "\n----------------------------------------------------");
 
     }
-     public String getInput() {
-        boolean valid = false;
-        String input = null;
-        Scanner keyboard = new Scanner(System.in);
 
-        while (!valid) {
-
-            System.out.println("Select your menu option:");
-
-            input = keyboard.nextLine();
-            input = input.trim();
-
-            if (input.length() < 1) {
-                System.out.println("Invalid Entry - Must not be blank");
-                continue;
-            }
-            break;
-
-        }
-        return input;
-    }
-     
-     
-     
     public void doAction(char selection) {
 
         switch (selection) {
@@ -123,7 +86,7 @@ public class GameMenuView {
             case 'R':
                 this.returnMain();
                 break;
-            case 'Q':
+            case 'E':
                 return;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
@@ -131,7 +94,7 @@ public class GameMenuView {
         }
 
     }
-    
+
     private void viewMap() {
         System.out.println("\n*** View Map.");
     }
@@ -150,49 +113,49 @@ public class GameMenuView {
 
     private void movePerson() {
         MovePersonView Menu = new MovePersonView();
-        Menu.displayMenu();
+        Menu.display();
     }
-    
+
     private void startSleep() {
         System.out.println("*** Start Sleep ***");
     }
-    
+
     private void packShip() {
         System.out.println("*** Pack Ship ***");
     }
-    
+
     private void launchShip() {
         System.out.println("*** Launch Ship ***");
     }
-    
+
     private void returnHelp() {
         HelpMenuView Menu = new HelpMenuView();
-        Menu.displayMenu();
+        Menu.display();
     }
 
     private void workOnShip() {
         System.out.println("*** Work on Ship ***");
     }
-    
+
     private void useTool() {
         System.out.println("** Use Tools ***");
     }
-    
+
     private void seeBelt() {
         System.out.println("*** See tool belt ***");
     }
-    
+
     private void gatherSupplies() {
         System.out.println("*** Gather Supplies ***");
     }
-    
+
     private void object() {
         System.out.println("*** Pick up object ***");
     }
-    
+
     private void returnMain() {
         MainMenuView Menu = new MainMenuView();
-        Menu.displayMenu();
+        Menu.display();
     }
-    
+
 }

@@ -11,58 +11,21 @@ import java.util.Scanner;
  *
  * @author OptimusPrime
  */
-public class MovePersonView {
-    
-     private final String MENU = "\n"
-            + "\n---------------------------------------------------"
-            + "\n| Where would you like to go?                     |"
-            + "\n---------------------------------------------------"
-            + "\nD - Desert"
-            + "\nN - Nasa"
-            + "\nP - Planet Nefthar"
-            + "\nR - Return to Main Menu"
-            + "\nQ - Quit "
-            + "\n----------------------------------------------------";
+public class MovePersonView extends View {
 
-      public void displayMenu() {
-
-        char selection = ' ';
-        do {
-
-            System.out.println(MENU);//display the main menu
-
-            String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0); // get first character of string
-
-            this.doAction(selection); // do action based on selection
-
-        } while (selection != 'E'); // an slection is not "Exit"
-
+    public MovePersonView() {
+        super("\n"
+                + "\n---------------------------------------------------"
+                + "\n| Where would you like to go?                     |"
+                + "\n---------------------------------------------------"
+                + "\nD - Desert"
+                + "\nN - Nasa"
+                + "\nP - Planet Nefthar"
+                + "\nR - Return to Main Menu"
+                + "\nE - Quit "
+                + "\n----------------------------------------------------");
     }
 
-    public String getInput() {
-        boolean valid = false;
-        String input = null;
-        Scanner keyboard = new Scanner(System.in);
-
-        while (!valid) {
-
-            System.out.println("Select your menu option:");
-
-            input = keyboard.nextLine();
-            input = input.trim();
-
-            if (input.length() < 1) {
-                System.out.println("Invalid Entry - Must not be blank");
-         
-           
-                continue;
-            }
-            break;
-
-        }
-        return input;
-    }
     public void doAction(char selection) {
 
         switch (selection) {
@@ -78,16 +41,16 @@ public class MovePersonView {
             case 'R':
                 this.returnMain();
                 break;
-            case 'Q':
+            case 'E':
                 return;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
                 break;
         }
 
-    } 
-    
-      private void Desert() {
+    }
+
+    private void Desert() {
         System.out.println("\n*** Welcome to the desert.You must spend your time here collecting parts and tools to build your rocket.");
     }
 
@@ -101,9 +64,7 @@ public class MovePersonView {
 
     private void returnMain() {
         MainMenuView Menu = new MainMenuView();
-        Menu.displayMenu();
+        Menu.display();
     }
-    
-    
-    
+
 }
