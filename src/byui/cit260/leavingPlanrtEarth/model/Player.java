@@ -4,22 +4,23 @@
  * and open the template in the editor.
  */
 package byui.cit260.leavingPlanrtEarth.model;
+
 import java.io.Serializable;
 import java.util.Objects;
 /**
  *
- * @author Student
+ * @author OptimusPrime
  */
-public class Player implements Serializable{
-//class instance variables
-private String name;
-private double bestTime;
+public class Player implements Serializable {
+    
+    //class instance variables
+    private String name;
+    private double bestTime;
 
     public Player() {
     }
-
-
-
+    
+    
 
     public String getName() {
         return name;
@@ -36,23 +37,20 @@ private double bestTime;
     public void setBestTime(double bestTime) {
         this.bestTime = bestTime;
         
-        
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 13 * hash + Objects.hashCode(this.name);
-        hash = 13 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
-        return hash;
-    }
-
-    @Override
-    public String toString() {
-        return "Player{" + "name=" + name + ", bestTime=" + bestTime + '}';
-    }
+        }
 
     
+  
+    
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 11 * hash + Objects.hashCode(this.name);
+        hash = 11 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
+        return hash;
+    }
+    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -68,12 +66,14 @@ private double bestTime;
         if (Double.doubleToLongBits(this.bestTime) != Double.doubleToLongBits(other.bestTime)) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.name, other.name);
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Player{" + "name=" + name + ", bestTime=" + bestTime + '}';
+    }
+    
+    
+    
 }
