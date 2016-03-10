@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.leavingPlanetEarth.model;
 
 import java.io.Serializable;
@@ -11,12 +6,24 @@ import java.util.Objects;
  *
  * @author OptimusPrime
  */
-public class Parts implements Serializable {
+public enum Parts implements Serializable {
+    Engine("Connect to lower half of rocket for a power source"),
+    Window("Insert into the rocket for essential Needs"),
+    Gastank("Insert into rocket for power source"),
+    Chair("Insert chair for group members to sit on."),
+    Fins("Insert on outside of rocket for life power"),
+    Shelves("Insert inside rocket to store food for essential needs."),
+    Metalpanel("COver rocket for lift power.");
+    
+    private final String value;
+    
     // class instance variables
     private String powerSource;
     private double liftPower;
+    private String essentialNeeds;
 
-    public Parts() {
+    private Parts( String value) {
+        this.value = value;
     }
 
     
@@ -34,40 +41,6 @@ public class Parts implements Serializable {
 
     public void setLiftPower(double liftPower) {
         this.liftPower = liftPower;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + Objects.hashCode(this.powerSource);
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.liftPower) ^ (Double.doubleToLongBits(this.liftPower) >>> 32));
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Parts other = (Parts) obj;
-        if (Double.doubleToLongBits(this.liftPower) != Double.doubleToLongBits(other.liftPower)) {
-            return false;
-        }
-        if (!Objects.equals(this.powerSource, other.powerSource)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Parts{" + "powerSource=" + powerSource + ", liftPower=" + liftPower + '}';
     }
 
 }

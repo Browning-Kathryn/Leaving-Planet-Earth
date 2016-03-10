@@ -11,13 +11,14 @@ import java.util.Objects;
  *
  * @author OptimusPrime
  */
-public class StartLocation implements Serializable {
+public class startingScene implements Serializable {
     
     // class instance variables
     private String description;
     private double travelTime;
+    private String MapSymbol;
 
-    public StartLocation() {
+    public startingScene() {
     }
 
     
@@ -36,6 +37,13 @@ public class StartLocation implements Serializable {
 
     public void setTravelTime(double travelTime) {
         this.travelTime = travelTime;
+    }
+     public String getMapSymbol() {
+        return MapSymbol;
+    }
+
+    public void setMapSymbol(String mapsymbol) {
+        this.MapSymbol = mapsymbol;
     }
 
     @Override
@@ -62,7 +70,7 @@ public class StartLocation implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final StartLocation other = (StartLocation) obj;
+        final startingScene other = (startingScene) obj;
         if (Double.doubleToLongBits(this.travelTime) != Double.doubleToLongBits(other.travelTime)) {
             return false;
         }

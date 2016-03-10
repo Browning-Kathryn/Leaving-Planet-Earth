@@ -12,6 +12,9 @@ public class shelter implements Serializable{
    private double width;
 
     public shelter() {
+        this.name ="\n Please build a shelter to protect yourself from the elements";
+        this.length = 0;
+        this.width = 0;
     }
    
    

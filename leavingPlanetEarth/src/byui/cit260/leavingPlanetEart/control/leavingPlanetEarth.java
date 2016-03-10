@@ -49,4 +49,8 @@ public class leavingPlanetEarth {
         leavingPlanetEarth.input = input;
     }
 
+    static Game getCurentGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

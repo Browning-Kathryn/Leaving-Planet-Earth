@@ -13,8 +13,31 @@ import java.io.Serializable;
 public class Map implements Serializable{
 private double rowCount;
 private double columnCount;
+private Location [][] locations;
+
 
     public Map() {
+    }
+    public Map(int rowCount, int columnCount){
+        if(rowCount < 1 || columnCount < 1){
+            System.out.println("The number of rows and columns must be greater than 0");
+            return;
+        }
+        this.rowCount = 0;
+        this.columnCount=0;
+        
+        this.locations = new Location[rowCount][columnCount];
+        
+        for(int row =0; row < rowCount; row ++){
+            for(int column = 0; column < columnCount; column ++){
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(false);
+                
+                locations[row][column] = location;
+            }
+        }
     }
 
 

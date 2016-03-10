@@ -30,7 +30,12 @@ private double numberOfEngines;
 
 
 public buildRocket() {
-
+    this.description = "\nThis is the Rocket that will take you to Nefthar. Good Luck on your journey";
+    this.color="\nPlease choose your color for the rocket";
+    this.partsNeeded="\nYou may need additional parts to finish the rocket";
+    this.width = 0;
+    this.length = 0;
+    this.numberOfEngines =0;
 }
 
 

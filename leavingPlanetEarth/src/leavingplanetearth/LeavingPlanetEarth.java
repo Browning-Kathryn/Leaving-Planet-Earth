@@ -7,11 +7,11 @@ package leavingplanetearth;
 
 import byui.cit260.leavingPlanetEarth.model.Desert;
 import byui.cit260.leavingPlanetEarth.model.Food;
-import byui.cit260.leavingPlanetEarth.model.Inventory;
+import byui.cit260.leavingPlanetEarth.model.InventoryItem;
 import byui.cit260.leavingPlanetEarth.model.NASA;
 import byui.cit260.leavingPlanetEarth.model.Parts;
 import byui.cit260.leavingPlanetEarth.model.Player;
-import byui.cit260.leavingPlanetEarth.model.StartLocation;
+import byui.cit260.leavingPlanetEarth.model.startingScene;
 import byui.cit260.leavingPlanetEarth.model.Tools;
 import byui.cit260.leavingPlanetEarth.view.StartProgramView;
 

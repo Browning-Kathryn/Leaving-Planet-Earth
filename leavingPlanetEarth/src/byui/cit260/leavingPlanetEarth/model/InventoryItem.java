@@ -11,24 +11,24 @@ import java.util.Objects;
  *
  * @author OptimusPrime
  */
-public class Inventory implements Serializable {
+public class InventoryItem implements Serializable {
     
     // class instance variables
-    private String inventoryType;
+    private String description;
     private double quantityInStock;
     private double requireAmount;
 
-    public Inventory() {
+    public InventoryItem() {
     }
     
     
 
-    public String getInventoryType() {
-        return inventoryType;
+    public String getDescription() {
+        return description;
     }
 
-    public void setInventoryType(String inventoryType) {
-        this.inventoryType = inventoryType;
+    public void setDescription(String inventoryType) {
+        this.description = inventoryType;
     }
 
     public double getQuantityInStock() {
@@ -50,7 +50,7 @@ public class Inventory implements Serializable {
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 29 * hash + Objects.hashCode(this.inventoryType);
+        hash = 29 * hash + Objects.hashCode(this.description);
         hash = 29 * hash + (int) (Double.doubleToLongBits(this.quantityInStock) ^ (Double.doubleToLongBits(this.quantityInStock) >>> 32));
         hash = 29 * hash + (int) (Double.doubleToLongBits(this.requireAmount) ^ (Double.doubleToLongBits(this.requireAmount) >>> 32));
         return hash;
@@ -67,14 +67,14 @@ public class Inventory implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Inventory other = (Inventory) obj;
+        final InventoryItem other = (InventoryItem) obj;
         if (Double.doubleToLongBits(this.quantityInStock) != Double.doubleToLongBits(other.quantityInStock)) {
             return false;
         }
         if (Double.doubleToLongBits(this.requireAmount) != Double.doubleToLongBits(other.requireAmount)) {
             return false;
         }
-        if (!Objects.equals(this.inventoryType, other.inventoryType)) {
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
         return true;
@@ -82,7 +82,7 @@ public class Inventory implements Serializable {
 
     @Override
     public String toString() {
-        return "Inventory{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", requireAmount=" + requireAmount + '}';
+        return "Inventory{" + "inventoryType=" + description + ", quantityInStock=" + quantityInStock + ", requireAmount=" + requireAmount + '}';
     }
     
     
