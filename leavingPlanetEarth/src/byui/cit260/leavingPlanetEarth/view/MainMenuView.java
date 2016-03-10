@@ -54,11 +54,8 @@ public class MainMenuView extends View {
     }
 
     private void startNewGame() {
-        int value = GameControl.createNewGame(leavingPlanetEarth.getPlayer());
-        if (value < 0) {
-            System.out.println("ERROR-Failed to create new game");
-        }
-
+        GameControl.createNewGame(leavingPlanetEarth.getPlayer());
+ 
         GameMenuView Menu = new GameMenuView();
         Menu.display();
     }

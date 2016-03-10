@@ -11,79 +11,40 @@ import java.util.Objects;
  *
  * @author OptimusPrime
  */
-public class Food implements Serializable{
+public enum Food implements Serializable{
+    Apples ("These will give you energy"),
+    Meat ("This will give you strength"),
+    Water("This will give you hydration");
     
     // class instance variables
-    private String strengthGiving;
-    private String energyGiving;
-    private String hydrating;
+    private final String strengthGiving;
+    private final String energyGiving;
+    private final String hydrating;
 
-    public Food() {
+  
+    Food(String Description){
+        this.strengthGiving = ;
+        this.energyGiving = ;
+        this.hydrating = ;
     }
-    
-    
 
     public String getStrengthGiving() {
         return strengthGiving;
     }
 
-    public void setStrengthGiving(String strengthGiving) {
-        this.strengthGiving = strengthGiving;
-    }
-
+ 
     public String getEnergyGiving() {
         return energyGiving;
     }
 
-    public void setEnergyGiving(String energyGiving) {
-        this.energyGiving = energyGiving;
-    }
+ 
 
     public String getHydrating() {
         return hydrating;
     }
 
-    public void setHydrating(String hydrating) {
-        this.hydrating = hydrating;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 29 * hash + Objects.hashCode(this.strengthGiving);
-        hash = 29 * hash + Objects.hashCode(this.energyGiving);
-        hash = 29 * hash + Objects.hashCode(this.hydrating);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Food other = (Food) obj;
-        if (!Objects.equals(this.strengthGiving, other.strengthGiving)) {
-            return false;
-        }
-        if (!Objects.equals(this.energyGiving, other.energyGiving)) {
-            return false;
-        }
-        if (!Objects.equals(this.hydrating, other.hydrating)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Food{" + "strengthGiving=" + strengthGiving + ", energyGiving=" + energyGiving + ", hydrating=" + hydrating + '}';
-    }
+   
+    
     
     
     
