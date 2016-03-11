@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package byui.cit260.leavingPlanetEarth.model;
+
+import byui.cit260.leavingPlanetEarth.enums.Actor;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,22 +18,54 @@ public class Location implements Serializable {
     private int column;
     private boolean visited;
     private Scene scene;
-    private Enum actors;
+    private ArrayList<Actor> actors;
 
-    void setColumn(int column) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Location(int row, int column, Scene scene) {
+        this.row = row;
+        this.column = column;
+        this.visited = false;
+        this.scene = scene;
+    }
+    
+    public Location(int row, int column) {
+        this.row = row;
+        this.column = column;
+    }
+    
+    public Location() {
+        this.actors = new ArrayList<Actor>();
+    }
+    
+    public int getRow() {
+        return row;
     }
 
-    void setRow(int row) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setRow(int row) {
+        this.row = row;
     }
 
-    void setVisited(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int getColumn() {
+        return column;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
     }
 
     public boolean isVisited() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+    
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
     }
     
 }
