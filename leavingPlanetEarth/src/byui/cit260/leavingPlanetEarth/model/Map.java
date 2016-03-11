@@ -89,6 +89,10 @@ private Location [][] locations;
         return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
     }
 
+    public Location[][] getLocations() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
 }
 
