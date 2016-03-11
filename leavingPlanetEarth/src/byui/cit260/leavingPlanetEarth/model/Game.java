@@ -9,6 +9,7 @@ public class Game implements Serializable {
     private Player player;
     private Map map;
     private buildRocket rocket;
+    private InventoryItem[] inventory;
     
     public Game () {
         this.totalTime = 0;
@@ -20,6 +21,14 @@ public class Game implements Serializable {
     
     public void setTotalTime(double totalTime) {
         this.totalTime = totalTime;
+    }
+    
+    public InventoryItem[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(InventoryItem[] inventory) {
+        this.inventory = inventory;
     }
     
     public buildRocket getRocket() {
