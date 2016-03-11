@@ -5,6 +5,7 @@
  */
 package byui.cit260.leavingPlanetEart.control;
 
+import byui.cit260.leavingPlanetEarth.model.Game;
 import byui.cit260.leavingPlanetEarth.model.Player;
 
 import byui.cit260.leavingPlanetEarth.view.StartProgramView;
