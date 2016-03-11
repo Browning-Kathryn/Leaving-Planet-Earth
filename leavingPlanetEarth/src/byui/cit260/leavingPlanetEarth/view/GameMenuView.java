@@ -6,12 +6,10 @@
 package byui.cit260.leavingPlanetEarth.view;
 
 import byui.cit260.leavingPlanetEart.control.GameControl;
-import byui.cit260.leavingPlanetEarth.model.Scene;
 import byui.cit260.leavingPlanetEarth.model.Location;
 import byui.cit260.leavingPlanetEarth.model.Scene;
-import java.util.Scanner;
 import java.awt.Point;
-import java.io.PrintWriter;
+
 
 /**
  *
