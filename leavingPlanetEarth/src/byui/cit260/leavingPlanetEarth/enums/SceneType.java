@@ -15,7 +15,6 @@ public enum SceneType {
     shelter,
     NASA,
     Rocket,
-    Nefthar;
-    
-    
+    Nefthar,
+    finish;
 }
