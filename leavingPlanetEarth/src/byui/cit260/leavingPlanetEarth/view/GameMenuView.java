@@ -5,8 +5,13 @@
  */
 package byui.cit260.leavingPlanetEarth.view;
 
+import byui.cit260.leavingPlanetEart.control.GameControl;
+import byui.cit260.leavingPlanetEarth.model.Scene;
+import byui.cit260.leavingPlanetEarth.model.Location;
+import byui.cit260.leavingPlanetEarth.model.Scene;
 import java.util.Scanner;
-
+import java.awt.Point;
+import java.io.PrintWriter;
 /**
  *
  * @author OptimusPrime
@@ -95,9 +100,52 @@ public class GameMenuView extends View {
 
     }
 
-    private void viewMap() {
-        System.out.println("\n*** View Map.");
+    private void viewMap(PrintWriter out) {
+        int linelength =0;
+        
+        Location[][]locations = GameControl.getMapLocations();
+        int columnCount = locations[0].length;
+        
+        this.printTitle(out,columnCount, "Leaving Planet Earth");
+        this.printColumnHeaders(out, columnCount);
+        
+        for (int i=0; i< locations.length; i++){
+            Location[] rowLocations = locations[i];
+            this.printRowDivider(out, columnCount);
+            out.println();
+            if(i<9)
+                out.print(" " + (i+1));
+            else
+                out.print(i+1);
+            
+            for(int column= 0; column < columnCount; column++){
+                out.print("|");
+                Location location = rowLocations[column];
+                if (location !=null && location.isVisited())
+                    
+                   Scene scene = location.getScene();
+                if(scene!=null)
+                    out.print(scene.getMapSymbol());
+                else
+                    out.print(" ");
+            
+            }
+            else{
+                    out.print(" ??");
+        }
+        }
+        out.print("|");
     }
+    this.printRowDivider(out,columnCount);
+
+    private void printColumnHeaders(PrintWriter out, int columnCount) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void printTitle(PrintWriter out, int columnCount, String leaving_Planet_Earth) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+}
 
     private void constructShelter() {
         System.out.println("*** Construct Shelter");
