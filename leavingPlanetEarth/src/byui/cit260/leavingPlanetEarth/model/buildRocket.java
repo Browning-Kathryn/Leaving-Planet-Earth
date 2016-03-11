@@ -1,5 +1,3 @@
-
-
 package byui.cit260.leavingPlanetEarth.model;
 
 import java.io.Serializable;
@@ -7,214 +5,193 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
+ *
+ *
+ *
+ * @author Student
+ *
+ */
+public class buildRocket implements Serializable {
 
-*
+    private String description;
 
-* @author Student
+    private String color;
 
-*/
+    private String partsNeeded;
 
-public class buildRocket implements Serializable{
+    private double width;
 
-private String description;
+    private double length;
 
-private String color;
+    private double numberOfEngines;
 
-private String partsNeeded;
+    public buildRocket() {
+        this.description = "\nThis is the Rocket that will take you to Nefthar. Good Luck on your journey";
+        this.color = "\nPlease choose your color for the rocket";
+        this.partsNeeded = "\nYou may need additional parts to finish the rocket";
+        this.width = 0;
+        this.length = 0;
+        this.numberOfEngines = 0;
+    }
 
-private double width;
+    public String getDescription() {
 
-private double length;
+        return description;
 
-private double numberOfEngines;
+    }
 
+    public void setDescription(String description) {
 
-public buildRocket() {
-    this.description = "\nThis is the Rocket that will take you to Nefthar. Good Luck on your journey";
-    this.color="\nPlease choose your color for the rocket";
-    this.partsNeeded="\nYou may need additional parts to finish the rocket";
-    this.width = 0;
-    this.length = 0;
-    this.numberOfEngines =0;
-}
+        this.description = description;
 
+    }
 
+    public String getColor() {
 
+        return color;
 
-public String getDescription() {
+    }
 
-return description;
+    public void setColor(String color) {
 
-}
+        this.color = color;
 
+    }
 
-public void setDescription(String description) {
+    public String getPartsNeeded() {
 
-this.description = description;
+        return partsNeeded;
 
-}
+    }
 
+    public void setPartsNeeded(String partsNeeded) {
 
-public String getColor() {
+        this.partsNeeded = partsNeeded;
 
-return color;
+    }
 
-}
+    public double getWidth() {
 
+        return width;
 
-public void setColor(String color) {
+    }
 
-this.color = color;
+    public void setWidth(double width) {
 
-}
+        this.width = width;
 
+    }
 
-public String getPartsNeeded() {
+    public double getLength() {
 
-return partsNeeded;
+        return length;
 
-}
+    }
 
+    public void setLength(double length) {
 
-public void setPartsNeeded(String partsNeeded) {
+        this.length = length;
 
-this.partsNeeded = partsNeeded;
+    }
 
-}
+    public double getNumberOfEngines() {
 
+        return numberOfEngines;
 
-public double getWidth() {
+    }
 
-return width;
+    public void setNumberOfEngines(double numberOfEngines) {
 
-}
+        this.numberOfEngines = numberOfEngines;
 
+    }
 
-public void setWidth(double width) {
+    @Override
 
-this.width = width;
+    public int hashCode() {
 
-}
+        int hash = 3;
 
+        hash = 47 * hash + Objects.hashCode(this.description);
 
-public double getLength() {
+        hash = 47 * hash + Objects.hashCode(this.color);
 
-return length;
+        hash = 47 * hash + Objects.hashCode(this.partsNeeded);
 
-}
+        hash = 47 * hash + (int) (Double.doubleToLongBits(this.width) ^ (Double.doubleToLongBits(this.width) >>> 32));
 
+        hash = 47 * hash + (int) (Double.doubleToLongBits(this.length) ^ (Double.doubleToLongBits(this.length) >>> 32));
 
-public void setLength(double length) {
+        hash = 47 * hash + (int) (Double.doubleToLongBits(this.numberOfEngines) ^ (Double.doubleToLongBits(this.numberOfEngines) >>> 32));
 
-this.length = length;
+        return hash;
 
-}
+    }
 
+    @Override
 
-public double getNumberOfEngines() {
+    public boolean equals(Object obj) {
 
-return numberOfEngines;
+        if (this == obj) {
 
-}
+            return true;
 
+        }
 
-public void setNumberOfEngines(double numberOfEngines) {
+        if (obj == null) {
 
-this.numberOfEngines = numberOfEngines;
+            return false;
 
-}
+        }
 
+        if (getClass() != obj.getClass()) {
 
-@Override
+            return false;
 
-public int hashCode() {
+        }
 
-int hash = 3;
+        final buildRocket other = (buildRocket) obj;
 
-hash = 47 * hash + Objects.hashCode(this.description);
+        if (Double.doubleToLongBits(this.width) != Double.doubleToLongBits(other.width)) {
 
-hash = 47 * hash + Objects.hashCode(this.color);
+            return false;
 
-hash = 47 * hash + Objects.hashCode(this.partsNeeded);
+        }
 
-hash = 47 * hash + (int) (Double.doubleToLongBits(this.width) ^ (Double.doubleToLongBits(this.width) >>> 32));
+        if (Double.doubleToLongBits(this.length) != Double.doubleToLongBits(other.length)) {
 
-hash = 47 * hash + (int) (Double.doubleToLongBits(this.length) ^ (Double.doubleToLongBits(this.length) >>> 32));
+            return false;
 
-hash = 47 * hash + (int) (Double.doubleToLongBits(this.numberOfEngines) ^ (Double.doubleToLongBits(this.numberOfEngines) >>> 32));
+        }
 
-return hash;
+        if (Double.doubleToLongBits(this.numberOfEngines) != Double.doubleToLongBits(other.numberOfEngines)) {
 
-}
+            return false;
 
+        }
 
-@Override
+        if (!Objects.equals(this.description, other.description)) {
 
-public boolean equals(Object obj) {
+            return false;
 
-if (this == obj) {
+        }
 
-return true;
+        if (!Objects.equals(this.color, other.color)) {
 
-}
+            return false;
 
-if (obj == null) {
+        }
 
-return false;
+        return Objects.equals(this.partsNeeded, other.partsNeeded);
 
-}
+    }
 
-if (getClass() != obj.getClass()) {
+    @Override
 
-return false;
+    public String toString() {
 
-}
+        return "buildRocket{" + "description=" + description + ", color=" + color + ", partsNeeded=" + partsNeeded + ", width=" + width + ", length=" + length + ", numberOfEngines=" + numberOfEngines + '}';
 
-final buildRocket other = (buildRocket) obj;
-
-if (Double.doubleToLongBits(this.width) != Double.doubleToLongBits(other.width)) {
-
-return false;
-
-}
-
-if (Double.doubleToLongBits(this.length) != Double.doubleToLongBits(other.length)) {
-
-return false;
-
-}
-
-if (Double.doubleToLongBits(this.numberOfEngines) != Double.doubleToLongBits(other.numberOfEngines)) {
-
-return false;
-
-}
-
-if (!Objects.equals(this.description, other.description)) {
-
-return false;
-
-}
-
-if (!Objects.equals(this.color, other.color)) {
-
-return false;
-
-}
-
-return Objects.equals(this.partsNeeded, other.partsNeeded);
-
-}
-
-
-@Override
-
-public String toString() {
-
-return "buildRocket{" + "description=" + description + ", color=" + color + ", partsNeeded=" + partsNeeded + ", width=" + width + ", length=" + length + ", numberOfEngines=" + numberOfEngines + '}';
-
-}
-
-
+    }
 
 }
