@@ -5,14 +5,11 @@ import byui.cit260.leavingPlanetEarth.model.InventoryItem;
 import byui.cit260.leavingPlanetEarth.model.Map;
 import byui.cit260.leavingPlanetEarth.model.Player;
 import byui.cit260.leavingPlanetEarth.model.buildRocket;
-import byui.cit260.leavingPlanetEarth.model.Tools;
-import byui.cit260.leavingPlanetEarth.model.Parts;
-import byui.cit260.leavingPlanetEarth.model.Food;
 import byui.cit260.leavingPlanetEarth.model.shelter;
-import byui.cit260.leavingPlanetEarth.model.Actor;
-import byui.cit260.leavingPlanetEart.control.Game;
-import byui.cit260.leavingPlanetEart.control.MapControl;
-import com.sun.xml.internal.ws.util.Constants;
+import byui.cit260.leavingPlanetEarth.enums.Actor;
+import byui.cit260.leavingPlanetEarth.model.Game;
+import byui.cit260.leavingPlanetEarth.model.Location;
+import java.awt.Point;
 import javafx.scene.Scene;
 
 /**
@@ -45,7 +42,7 @@ public class GameControl {
 
         Actor[] actors = Actor.values();
 
-        MapControl.moveActorsToStartingLocation(map);
+        MapControl.moveActorsToStartingLocation(map, actors);
 
     }
 
@@ -131,5 +128,9 @@ public class GameControl {
     public static InventoryItem[] getSortedInventoryList() {
         System.out.println("\n**** getSortedInventoryList stub function called ***");
         return null;
+    }
+    
+    public static Location[][] getMapLocations() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
