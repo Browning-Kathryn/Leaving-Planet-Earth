@@ -8,8 +8,7 @@ package byui.cit260.leavingPlanetEarth.view;
 import byui.cit260.leavingPlanetEart.control.GameControl;
 import byui.cit260.leavingPlanetEarth.model.Location;
 import byui.cit260.leavingPlanetEarth.model.Scene;
-import java.awt.Point;
-
+import java.io.PrintWriter;
 
 /**
  *
@@ -152,8 +151,7 @@ public class GameMenuView extends View {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-
-private void constructShelter() {
+    private void constructShelter() {
         System.out.println("*** Construct Shelter");
     }
 
@@ -210,6 +208,10 @@ private void constructShelter() {
     private void returnMain() {
         MainMenuView Menu = new MainMenuView();
         Menu.display();
+    }
+
+    private void viewMap() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
