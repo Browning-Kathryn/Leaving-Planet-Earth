@@ -158,8 +158,8 @@ public class GameMenuView extends View {
 
     private void viewInventory() {
         InventoryControl sortByDescription= new InventoryControl();
+    
    
-        
     }
 
     private void checkProgress() {
