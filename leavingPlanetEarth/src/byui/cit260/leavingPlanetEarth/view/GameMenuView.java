@@ -8,6 +8,7 @@ package byui.cit260.leavingPlanetEarth.view;
 import byui.cit260.leavingPlanetEart.control.GameControl;
 import byui.cit260.leavingPlanetEarth.model.Location;
 import byui.cit260.leavingPlanetEarth.model.Scene;
+import byui.cit260.leavingPlanetEart.control.InventoryControl;
 import java.io.PrintWriter;
 
 /**
@@ -156,7 +157,9 @@ public class GameMenuView extends View {
     }
 
     private void viewInventory() {
-        System.out.println("*** View Inventory ***");
+        InventoryControl sortByDescription= new InventoryControl();
+   
+        
     }
 
     private void checkProgress() {

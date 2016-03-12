@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.leavingPlanetEart.control;
-
+import byui.cit260.leavingPlanetEarth.model.InventoryItem;
 /**
  *
  * @author OptimusPrime
@@ -37,4 +37,18 @@ public class InventoryControl {
         return rations;
                 
     }
-}
+    
+    public static void sortByDescription(InventoryItem[]items){
+        InventoryItem tempItem;
+        for(int i=0;i< items.length-1; i++){
+            for(int j =0; j< items.length-1-i; j++){
+                if(items[j].getDescription().compareToIgnoreCase(items[j + 1].getDescription())>0){
+                    tempItem = items[j];
+                    items[j] = items[j+1];
+                    items[j+1] = tempItem;
+                }
+            }
+        }
+        
+    }
+    }
