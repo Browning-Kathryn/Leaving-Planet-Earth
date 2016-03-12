@@ -26,7 +26,7 @@ public class MapControl {
     }
 
     private static Scene[] createScenes() {
-        Game game = leavingPlanetEarth.getCurentGame();
+        Game game = leavingPlanetEarth.getCurrentGame();
 
         Scene[] scenes = new Scene[SceneType.values().length];
 

@@ -57,6 +57,19 @@ private Location [][] locations;
     public void setColumnCount(double columnCount) {
         this.columnCount = columnCount;
     }
+    
+    public Location[][] getLocations() {
+        return locations;
+    }
+    
+public void setLocations(Location[][]locations){
+    this.locations = locations;
+}
+    
+  @Override
+    public String toString() {
+        return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
+    }
 
     @Override
     public int hashCode() {
@@ -84,14 +97,7 @@ private Location [][] locations;
         return Double.doubleToLongBits(this.columnCount) == Double.doubleToLongBits(other.columnCount);
     }
 
-    @Override
-    public String toString() {
-        return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
-    }
-
-    public Location[][] getLocations() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  
 
 
 }
