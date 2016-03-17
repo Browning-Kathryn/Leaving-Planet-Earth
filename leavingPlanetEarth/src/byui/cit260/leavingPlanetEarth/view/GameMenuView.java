@@ -10,6 +10,7 @@ import byui.cit260.leavingPlanetEarth.model.Location;
 import byui.cit260.leavingPlanetEarth.model.Scene;
 import byui.cit260.leavingPlanetEart.control.InventoryControl;
 import byui.cit260.leavingPlanetEarth.model.InventoryItem;
+import byui.cit260.leavingPlanetEarth.view.MapView;
 import java.io.PrintWriter;
 
 /**
@@ -216,7 +217,9 @@ public class GameMenuView extends View {
     }
 
     private void viewMap() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      MapView Menu = new MapView();
+     
+      
     }
 
 }

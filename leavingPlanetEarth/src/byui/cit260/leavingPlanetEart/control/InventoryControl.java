@@ -24,14 +24,18 @@ public class InventoryControl {
         
     }
 
-    public double calcRations(double noPeople, double inventoryItem){
+    public double calcRations(double noPeople, double inventoryItem, String energy){
         if(noPeople <= 0){
             return-1;
         }
         if(inventoryItem < 1 || inventoryItem >100){
             return-1;
         }
-        
+        try{
+        noPeople=Double.parseDouble(energy);
+        } catch (NumberFormatException nf){
+            System.out.println("\n You Must enter a valid number");
+        }
         double rations = Math.round((inventoryItem/noPeople)*1000.0)/1000.0;
         
         return rations;

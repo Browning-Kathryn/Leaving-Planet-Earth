@@ -5,10 +5,19 @@
  */
 package byui.cit260.leavingPlanetEarth.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author OptimusPrime
  */
-public class Map {
+public class MapView {
+    
+    
+   
+
+
+ 
+       
     
 }

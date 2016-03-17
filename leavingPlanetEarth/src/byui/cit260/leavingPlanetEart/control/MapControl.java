@@ -94,7 +94,7 @@ public class MapControl {
        
     }
 
-    private static void moveActorToLocation(Game game, Actor actor, Point position)
+    public static void moveActorToLocation(Game game, Actor actor, Point position)
                     throws MapControlException{
         Map map =leavingPlanetEarth.getCurrentGame().getMap();
         int newRow = position.x-1;

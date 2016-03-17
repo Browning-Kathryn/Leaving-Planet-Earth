@@ -5,6 +5,11 @@
  */
 package byui.cit260.leavingPlanetEarth.view;
 
+import byui.cit260.leavingPlanetEart.control.MapControl;
+import byui.cit260.leavingPlanetEarth.exceptions.MapControlException;
+import byui.cit260.leavingPlanetEarth.enums.Actor;
+import byui.cit260.leavingPlanetEarth.model.Game;
+import java.awt.Point;
 import java.util.Scanner;
 
 /**
@@ -27,7 +32,14 @@ public class MovePersonView extends View {
     }
 
     public void doAction(char selection) {
-
+        Actor actor = null;
+        Game game = null;
+        Point position = null;
+try{
+    MapControl.moveActorToLocation(game, actor,position);
+} catch (MapControlException me){
+    System.out.println(me.getMessage());
+}
         switch (selection) {
             case 'D':
                 this.Desert();
