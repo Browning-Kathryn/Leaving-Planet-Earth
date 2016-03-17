@@ -9,8 +9,13 @@ import byui.cit260.leavingPlanetEart.control.GameControl;
 import byui.cit260.leavingPlanetEarth.model.Location;
 import byui.cit260.leavingPlanetEarth.model.Scene;
 import byui.cit260.leavingPlanetEart.control.InventoryControl;
+import byui.cit260.leavingPlanetEart.control.MapControl;
+import byui.cit260.leavingPlanetEarth.enums.Actor;
+import byui.cit260.leavingPlanetEarth.exceptions.MapControlException;
+import byui.cit260.leavingPlanetEarth.model.Game;
 import byui.cit260.leavingPlanetEarth.model.InventoryItem;
 import byui.cit260.leavingPlanetEarth.view.MapView;
+import java.awt.Point;
 import java.io.PrintWriter;
 
 /**
@@ -46,7 +51,14 @@ public class GameMenuView extends View {
 
     @Override
     public void doAction(char selection) {
-
+      Actor actor = null;
+        Game game = null;
+        Point position = null;
+try{
+    MapControl.moveActorToLocation(game, actor,position);
+} catch (MapControlException me){
+    System.out.println(me.getMessage());
+}
         switch (selection) {
             case 'V':
                 this.viewMap();

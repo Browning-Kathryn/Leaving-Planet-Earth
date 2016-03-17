@@ -10,13 +10,18 @@ import byui.cit260.leavingPlanetEarth.model.InventoryItem;
  * @author OptimusPrime
  */
 public class InventoryControl {
-    public double calcFuelNeeded(double distance, double mpg){
+    public double calcFuelNeeded(double distance, double mpg, String fuel){
         if (distance <= 0){
         return -1;
     }
         if (mpg < 5 || mpg > 50){
             return -1;
            }
+        try{
+        distance=Double.parseDouble(fuel);
+        } catch (NumberFormatException nf){
+            System.out.println("\n You Must enter a valid number");
+        }
          double gallons = Math.round((distance/mpg)*1000.0)/1000.0;
          
                  
