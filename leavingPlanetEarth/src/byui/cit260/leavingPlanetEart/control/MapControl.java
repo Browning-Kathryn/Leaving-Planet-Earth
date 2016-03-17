@@ -82,19 +82,19 @@ public class MapControl {
 
     }
 
-    public static int moveActorsToStartingLocation(Map map, Actor[] actors) 
+    public static void moveActorsToStartingLocation(Map map, Actor[] actors) 
                     throws MapControlException{
         Game game = leavingPlanetEarth.getCurrentGame();
         for (Actor actor : actors) {
-            Point position = new Point(0, 2);
+            Point position = new Point(2, 2);
             game.getActorsLocation()[actor.ordinal()] = new Point();
-           int returnValue = MapControl.moveActorToLocation(game, actor, position);
+           MapControl.moveActorToLocation(game, actor, position);
         
         }
-        return 0;
+       
     }
 
-    private static int moveActorToLocation(Game game, Actor actor, Point position)
+    private static void moveActorToLocation(Game game, Actor actor, Point position)
                     throws MapControlException{
         Map map =leavingPlanetEarth.getCurrentGame().getMap();
         int newRow = position.x-1;
@@ -109,7 +109,7 @@ public class MapControl {
                                           + " the bounds of the map");
             
         }
-       return 0;
+   
     }
 
  

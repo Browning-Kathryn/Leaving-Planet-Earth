@@ -23,8 +23,8 @@ private Location [][] locations;
             System.out.println("The number of rows and columns must be greater than 0");
             return;
         }
-        this.rowCount = 0;
-        this.columnCount=0;
+        this.rowCount = 4;
+        this.columnCount= 4;
         
         this.locations = new Location[rowCount][columnCount];
         
