@@ -7,7 +7,10 @@ package byui.cit260.leavingPlanetEarth.view;
 
 import byui.cit260.leavingPlanetEart.control.GameControl;
 import byui.cit260.leavingPlanetEart.control.leavingPlanetEarth;
+import byui.cit260.leavingPlanetEarth.exceptions.MapControlException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -33,7 +36,13 @@ public class MainMenuView extends View {
 
         switch (selection) {
             case 'N':
+        {
+            try {
                 this.startNewGame();
+            } catch (MapControlException ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case 'G':
                 this.startExistingGame();
@@ -53,7 +62,7 @@ public class MainMenuView extends View {
 
     }
 
-    private void startNewGame() {
+    private void startNewGame() throws MapControlException {
         GameControl.createNewGame(leavingPlanetEarth.getPlayer());
  
         GameMenuView Menu = new GameMenuView();

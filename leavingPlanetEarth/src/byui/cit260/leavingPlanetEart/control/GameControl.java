@@ -7,6 +7,7 @@ import byui.cit260.leavingPlanetEarth.model.Player;
 import byui.cit260.leavingPlanetEarth.model.buildRocket;
 import byui.cit260.leavingPlanetEarth.model.shelter;
 import byui.cit260.leavingPlanetEarth.enums.Actor;
+import byui.cit260.leavingPlanetEarth.exceptions.MapControlException;
 import byui.cit260.leavingPlanetEarth.model.Game;
 import byui.cit260.leavingPlanetEarth.model.Location;
 import java.awt.Point;
@@ -21,7 +22,8 @@ public class GameControl {
     public GameControl() {
     }
 
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player)
+        throws MapControlException{
 
         Game game = new Game();
         leavingPlanetEarth.setCurrentGame(game);
@@ -45,6 +47,7 @@ public class GameControl {
         MapControl.moveActorsToStartingLocation(map, actors);
 
     }
+ 
 
     public static InventoryItem[] createInventoryList() {
         InventoryItem[] inventory = new InventoryItem[10]; // This magic number should be a contstant

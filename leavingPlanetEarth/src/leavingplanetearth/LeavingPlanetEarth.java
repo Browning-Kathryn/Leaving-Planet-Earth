@@ -28,6 +28,15 @@ public class LeavingPlanetEarth {
         //create StartProgramView and start the program
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.startProgram();
+        
+        try{
+            
+            startProgramView.displayBanner();
+        } catch (Throwable te){
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.displayBanner();
+        }
     }
     
    

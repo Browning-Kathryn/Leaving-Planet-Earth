@@ -6,6 +6,7 @@ import byui.cit260.leavingPlanetEarth.enums.SceneType;
 import byui.cit260.leavingPlanetEarth.model.Location;
 import byui.cit260.leavingPlanetEarth.model.Scene;
 import byui.cit260.leavingPlanetEarth.enums.Actor;
+import byui.cit260.leavingPlanetEarth.exceptions.MapControlException;
 
 import java.awt.Point;
 import java.util.ArrayList;
@@ -81,20 +82,34 @@ public class MapControl {
 
     }
 
-    public static void moveActorsToStartingLocation(Map map, Actor[] actors) {
+    public static int moveActorsToStartingLocation(Map map, Actor[] actors) 
+                    throws MapControlException{
         Game game = leavingPlanetEarth.getCurrentGame();
         for (Actor actor : actors) {
             Point position = new Point(0, 2);
             game.getActorsLocation()[actor.ordinal()] = new Point();
-            MapControl.moveActorToLocation(game, actor, position);
+           int returnValue = MapControl.moveActorToLocation(game, actor, position);
+        
         }
+        return 0;
     }
 
-    private static void moveActorToLocation(Game game, Actor actor, Point position) {
-        System.out.println(game);
-        System.out.println("\n"+actor);
-        System.out.println("\n"+position);
-        System.out.println("\nMove Actor To Location not coded");
+    private static int moveActorToLocation(Game game, Actor actor, Point position)
+                    throws MapControlException{
+        Map map =leavingPlanetEarth.getCurrentGame().getMap();
+        int newRow = position.x-1;
+        int newColumn = position.y-1;
+        
+        if(newRow < 0 || newRow >= map.getRowCount() ||
+                newColumn < 0 || newColumn >= map.getColumnCount()) {
+            
+            throw new MapControlException("Can not move actor to location"
+                                          + position.x + "," + position.y
+                                          + " because that location is outside"
+                                          + " the bounds of the map");
+            
+        }
+       return 0;
     }
 
  
