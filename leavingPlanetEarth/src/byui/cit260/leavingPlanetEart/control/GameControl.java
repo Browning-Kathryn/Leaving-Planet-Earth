@@ -7,11 +7,19 @@ import byui.cit260.leavingPlanetEarth.model.Player;
 import byui.cit260.leavingPlanetEarth.model.buildRocket;
 import byui.cit260.leavingPlanetEarth.model.shelter;
 import byui.cit260.leavingPlanetEarth.enums.Actor;
+import byui.cit260.leavingPlanetEarth.exceptions.GameControlException;
 import byui.cit260.leavingPlanetEarth.exceptions.MapControlException;
 import byui.cit260.leavingPlanetEarth.model.Game;
 import byui.cit260.leavingPlanetEarth.model.Location;
 import java.awt.Point;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import javafx.scene.Scene;
+import leavingplanetearth.LeavingPlanetEarth;
 
 /**
  *
@@ -19,8 +27,36 @@ import javafx.scene.Scene;
  */
 public class GameControl {
 
+   
+  protected final BufferedReader keyboard = LeavingPlanetEarth.getinFile();
+    protected final PrintWriter console = LeavingPlanetEarth.getOutFile();
     public GameControl() {
     }
+     public static void saveGame(Game game, String filePath) 
+        throws GameControlException {
+        try( FileOutputStream fops = new FileOutputStream(filePath)){
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game);
+        }
+        catch(Exception e){
+            throw new GameControlException(e.getMessage());
+        }
+    }
+    
+     public static void getSavedGame(String filepath)
+                throws GameControlException{
+         Game game = null;
+         
+         try(FileInputStream fips = new FileInputStream(filepath)) {
+             ObjectInputStream input = new ObjectInputStream(fips);
+             
+             game = (Game) input.readObject();
+         }
+         catch(Exception e){
+             throw new GameControlException(e.getMessage());
+         }
+     }
 
     public static void createNewGame(Player player)
         throws MapControlException{
@@ -115,13 +151,13 @@ public class GameControl {
 
     private void viewInventory() {
         InventoryItem[] inventory = GameControl.getSortedInventoryList();
-        System.out.println("\nList of Inventory Items");
-        System.out.println("Description" + "\t"
+      this.console.println("\nList of Inventory Items");
+        this.console.println("Description" + "\t"
                 + "Required" + "\t"
                 + "In Stock");
 
         for (InventoryItem inventoryItem : inventory) {
-            System.out.println(inventoryItem.getDescription() + "\t   "
+            this.console.println(inventoryItem.getDescription() + "\t   "
                     + inventoryItem.getRequireAmount() + "\t   "
                     + inventoryItem.getQuantityInStock());
 
@@ -134,7 +170,7 @@ public class GameControl {
     }
     
     public static Location[][] getMapLocations() {
-      System.out.println("\n**** getSortedInventoryList stub function called ***");
+     System.out.println("\n**** getSortedInventoryList stub function called ***");
         return null;  
     }
 }

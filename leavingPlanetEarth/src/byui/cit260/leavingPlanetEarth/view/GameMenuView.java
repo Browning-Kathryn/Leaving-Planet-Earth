@@ -16,13 +16,17 @@ import byui.cit260.leavingPlanetEarth.model.Game;
 import byui.cit260.leavingPlanetEarth.model.InventoryItem;
 import byui.cit260.leavingPlanetEarth.view.MapView;
 import java.awt.Point;
+import java.io.BufferedReader;
 import java.io.PrintWriter;
+import leavingplanetearth.LeavingPlanetEarth;
 
 /**
  *
  * @author OptimusPrime
  */
 public class GameMenuView extends View {
+     protected final BufferedReader keyboard = LeavingPlanetEarth.getinFile();
+    protected final PrintWriter console = LeavingPlanetEarth.getOutFile();
 
     public GameMenuView() {
         super("\n"
@@ -57,7 +61,7 @@ public class GameMenuView extends View {
 try{
     MapControl.moveActorToLocation(game, actor,position);
 } catch (MapControlException me){
-    System.out.println(me.getMessage());
+   this.console.println(me.getMessage());
 }
         switch (selection) {
             case 'V':
@@ -108,7 +112,7 @@ try{
             case 'E':
                 return;
             default:
-                System.out.println("\n*** Invalid selection *** Try Again");
+                this.console.println("\n*** Invalid selection *** Try Again");
                 break;
         }
 
@@ -167,7 +171,7 @@ try{
     }
 
     private void constructShelter() {
-        System.out.println("*** Construct Shelter");
+      this.console.println("*** Construct Shelter");
     }
 
     private void viewInventory() {
@@ -178,7 +182,7 @@ try{
     }
 
     private void checkProgress() {
-        System.out.println("*** Check Progress ***");
+        this.console.println("*** Check Progress ***");
     }
 
     private void movePerson() {
@@ -187,15 +191,15 @@ try{
     }
 
     private void startSleep() {
-        System.out.println("*** Start Sleep ***");
+        this.console.println("*** Start Sleep ***");
     }
 
     private void packShip() {
-        System.out.println("*** Pack Ship ***");
+        this.console.println("*** Pack Ship ***");
     }
 
     private void launchShip() {
-        System.out.println("*** Launch Ship ***");
+        this.console.println("*** Launch Ship ***");
     }
 
     private void returnHelp() {
@@ -204,23 +208,23 @@ try{
     }
 
     private void workOnShip() {
-        System.out.println("*** Work on Ship ***");
+        this.console.println("*** Work on Ship ***");
     }
 
     private void useTool() {
-        System.out.println("** Use Tools ***");
+        this.console.println("** Use Tools ***");
     }
 
     private void seeBelt() {
-        System.out.println("*** See tool belt ***");
+        this.console.println("*** See tool belt ***");
     }
 
     private void gatherSupplies() {
-        System.out.println("*** Gather Supplies ***");
+        this.console.println("*** Gather Supplies ***");
     }
 
     private void object() {
-        System.out.println("*** Pick up object ***");
+        this.console.println("*** Pick up object ***");
     }
 
     private void returnMain() {

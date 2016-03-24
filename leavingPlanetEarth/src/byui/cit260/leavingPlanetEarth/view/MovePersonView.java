@@ -10,14 +10,18 @@ import byui.cit260.leavingPlanetEarth.exceptions.MapControlException;
 import byui.cit260.leavingPlanetEarth.enums.Actor;
 import byui.cit260.leavingPlanetEarth.model.Game;
 import java.awt.Point;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import leavingplanetearth.LeavingPlanetEarth;
 
 /**
  *
  * @author OptimusPrime
  */
 public class MovePersonView extends View {
-
+  protected final BufferedReader keyboard = LeavingPlanetEarth.getinFile();
+    protected final PrintWriter console = LeavingPlanetEarth.getOutFile();
     public MovePersonView() {
         super("\n"
                 + "\n---------------------------------------------------"
@@ -38,7 +42,7 @@ public class MovePersonView extends View {
 try{
     MapControl.moveActorToLocation(game, actor,position);
 } catch (MapControlException me){
-    System.out.println(me.getMessage());
+    this.console.println(me.getMessage());
 }
         switch (selection) {
             case 'D':
@@ -56,22 +60,22 @@ try{
             case 'E':
                 return;
             default:
-                System.out.println("\n*** Invalid selection *** Try Again");
+                this.console.println("\n*** Invalid selection *** Try Again");
                 break;
         }
 
     }
 
     private void Desert() {
-        System.out.println("\n*** Welcome to the desert.You must spend your time here collecting parts and tools to build your rocket.");
+        this.console.println("\n*** Welcome to the desert.You must spend your time here collecting parts and tools to build your rocket.");
     }
 
     private void Nasa() {
-        System.out.println("*** Welcome to Nasa. Start building your rocket right away. Time is running out for you to reach Planet Nefthar");
+        this.console.println("*** Welcome to Nasa. Start building your rocket right away. Time is running out for you to reach Planet Nefthar");
     }
 
     private void planetNefthar() {
-        System.out.println("*** Welcom to Planet Nefthar. You made it!***");
+        this.console.println("*** Welcom to Planet Nefthar. You made it!***");
     }
 
     private void returnMain() {

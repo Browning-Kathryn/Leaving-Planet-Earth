@@ -5,14 +5,18 @@
  */
 package byui.cit260.leavingPlanetEarth.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import leavingplanetearth.LeavingPlanetEarth;
 
 /**
  *
  * @author OptimusPrime
  */
 public class HelpMenuView extends View {
-
+  protected final BufferedReader keyboard = LeavingPlanetEarth.getinFile();
+    protected final PrintWriter console = LeavingPlanetEarth.getOutFile();
     public HelpMenuView() {
         super("\n"
                 + "\n---------------------------------------------------"
@@ -53,30 +57,30 @@ public class HelpMenuView extends View {
             case 'E':
                 return;
             default:
-                System.out.println("\n*** Invalid selection *** Try Again");
+                this.console.println("\n*** Invalid selection *** Try Again");
                 break;
         }
 
     }
 
     private void startMove() {
-        System.out.println("\n*** You move through the board by using the arrow keys on your keyboard.");
+        this.console.println("\n*** You move through the board by using the arrow keys on your keyboard.");
     }
 
     private void startBuildShelter() {
-        System.out.println("*** You can build the shelter using any tools and supplies that you have picked up along the way");
+        this.console.println("*** You can build the shelter using any tools and supplies that you have picked up along the way");
     }
 
     private void startFind() {
-        System.out.println("*** You can find pieces of the rocket ship and food as you journey through the desert. They will be marked in various colors ***");
+        this.console.println("*** You can find pieces of the rocket ship and food as you journey through the desert. They will be marked in various colors ***");
     }
 
     private void losingTime() {
-        System.out.println("***Every day you lose one hour of sunshine and you cannot go outside at night or the game is over. You will need to plan your time accordingly. ***");
+        this.console.println("***Every day you lose one hour of sunshine and you cannot go outside at night or the game is over. You will need to plan your time accordingly. ***");
     }
 
     private void time() {
-        System.out.println("You only have 15 days to solve the game. Move quickly or you may have to start over");
+        this.console.println("You only have 15 days to solve the game. Move quickly or you may have to start over");
     }
 
     private void returnMain() {

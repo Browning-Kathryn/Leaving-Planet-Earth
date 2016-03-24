@@ -7,17 +7,22 @@ package byui.cit260.leavingPlanetEarth.view;
 
 import byui.cit260.leavingPlanetEart.control.GameControl;
 import byui.cit260.leavingPlanetEart.control.leavingPlanetEarth;
+
 import byui.cit260.leavingPlanetEarth.exceptions.MapControlException;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import leavingplanetearth.LeavingPlanetEarth;
 
 /**
  *
  * @author OptimusPrime
  */
 public class MainMenuView extends View {
-
+  protected final BufferedReader keyboard = LeavingPlanetEarth.getinFile();
+    protected final PrintWriter console = LeavingPlanetEarth.getOutFile();
     public MainMenuView() {
         super("\n"
                 + "\n---------------------------------------------------"
@@ -56,7 +61,7 @@ public class MainMenuView extends View {
             case 'E':
                 return;
             default:
-                System.out.println("\n*** Invalid selection *** Try Again");
+                ErrorView.display("MainMenuView","*** Invalid selection *** Try again");
                 break;
         }
 
@@ -70,7 +75,7 @@ public class MainMenuView extends View {
     }
 
     private void startExistingGame() {
-        System.out.println("*** startExistingGame function called ***");
+        this.console.println("*** startExistingGame function called ***");
     }
 
     private void displayHelpMenu() {
@@ -78,8 +83,31 @@ public class MainMenuView extends View {
         Menu.display();
     }
 
+    private void startSavedGame(){
+        this.console.println("\n\nEnter the file path for file where the game"
+                                + "is to be saved.");
+        
+        String filePath = this.getInput();
+        
+        try{
+            GameControl.getSavedGame(filePath);
+        } catch (Exception ex){
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+    }
     private void saveGame() {
-        System.out.println("***saveGame function called ***");
+        this.console.println("\n\nEnter the file path for file where the game"
+                                + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+            
+            GameControl.saveGame(leavingPlanetEarth.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 
 }

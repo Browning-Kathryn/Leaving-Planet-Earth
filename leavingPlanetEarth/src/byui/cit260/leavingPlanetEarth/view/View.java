@@ -5,7 +5,10 @@
  */
 package byui.cit260.leavingPlanetEarth.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import leavingplanetearth.LeavingPlanetEarth;
 
 /**
  *
@@ -14,6 +17,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
 
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = LeavingPlanetEarth.getinFile();
+    protected final PrintWriter console = LeavingPlanetEarth.getOutFile();
 
     public View() {
     }
@@ -27,7 +33,7 @@ public abstract class View implements ViewInterface {
         char selection = ' ';
         do {
 
-            System.out.println();//display the main menu
+            this.console.println();//display the main menu
 
             String input = this.getInput(); // get the user's selection
             selection = input.charAt(0); // get first character of string
@@ -40,22 +46,23 @@ public abstract class View implements ViewInterface {
 
     @Override
     public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
         String value = null;
-
+        try{
+          
         while (!valid) {
 
-            System.out.println("\n" + this.displayMessage);
-
-            value = keyboard.nextLine();
+            value=this.keyboard.readLine();
             value = value.trim();
 
             if (value.length() < 1) {
-                System.out.println("\n*** You must enter a value ***");
+                this.console.println("\n*** You must enter a value ***");
                 continue;
             }
             break;
+        }
+        } catch (Exception e){
+            this.console.println("Error reading input:"+ e.getMessage());
         }
         return value;
     }

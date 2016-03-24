@@ -5,11 +5,16 @@
  */
 package byui.cit260.leavingPlanetEart.control;
 import byui.cit260.leavingPlanetEarth.model.InventoryItem;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import leavingplanetearth.LeavingPlanetEarth;
 /**
  *
  * @author OptimusPrime
  */
 public class InventoryControl {
+      protected final BufferedReader keyboard = LeavingPlanetEarth.getinFile();
+    protected final PrintWriter console = LeavingPlanetEarth.getOutFile();
     public double calcFuelNeeded(double distance, double mpg, String fuel){
         if (distance <= 0){
         return -1;
@@ -20,7 +25,7 @@ public class InventoryControl {
         try{
         distance=Double.parseDouble(fuel);
         } catch (NumberFormatException nf){
-            System.out.println("\n You Must enter a valid number");
+            this.console.println("\n You Must enter a valid number");
         }
          double gallons = Math.round((distance/mpg)*1000.0)/1000.0;
          
@@ -39,7 +44,7 @@ public class InventoryControl {
         try{
         noPeople=Double.parseDouble(energy);
         } catch (NumberFormatException nf){
-            System.out.println("\n You Must enter a valid number");
+            this.console.println("\n You Must enter a valid number");
         }
         double rations = Math.round((inventoryItem/noPeople)*1000.0)/1000.0;
         

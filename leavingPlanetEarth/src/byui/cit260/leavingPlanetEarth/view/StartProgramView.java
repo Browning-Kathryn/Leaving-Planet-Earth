@@ -9,12 +9,16 @@ import byui.cit260.leavingPlanetEart.control.GameControl;
 import byui.cit260.leavingPlanetEart.control.ProgramControl;
 import byui.cit260.leavingPlanetEarth.model.Player;
 import java.util.Scanner;
-
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import leavingplanetearth.LeavingPlanetEarth;
 /**
  *
  * @author OptimusPrime
  */
 public class StartProgramView {
+     protected final BufferedReader keyboard = LeavingPlanetEarth.getinFile();
+    protected final PrintWriter console = LeavingPlanetEarth.getOutFile();
 
     public StartProgramView() {
 
@@ -40,15 +44,15 @@ public class StartProgramView {
     }
 
     public void displayBanner() {
-        System.out.println("\n\n*******************************************");
+        this.console.println("\n\n*******************************************");
 
-        System.out.println("*                                            *"
+        this.console.println("*                                            *"
                 + "\n* This is the game of Leaving Planet Earth          *"
                 + "\n* In this game you will travel with your            *"
                 + "\n* fellow astronauts through dangerous terrain       *"
                 + "\n* to Nasa headquarters, and then the planet Nefthtar*");
 
-        System.out.println("*                                            *"
+        this.console.println("*                                            *"
                 + "\n* Planet Earth is dying.You must leave or you will   *"
                 + "\n* die too. You have 5 days to travel to NASA and     *"
                 + "\n* once you're there you will have 15 days to build a *"
@@ -59,41 +63,42 @@ public class StartProgramView {
                 + "\n* You may only work during the day and as the Earth  *"
                 + "\n* gets sicker the days get shorter.                  *");
 
-        System.out.println("*                                            *"
+        this.console.println("*                                            *"
                 + "\n* Good luck and if all goes well we will see you on  *"
                 + "\n*  Planet Nefthtar                                    *"
                 + "n*                                                     *");
 
-        System.out.println("**********************************************");
+        this.console.println("**********************************************");
 
     }
 
     public String getPlayersName() {
         boolean valid = false;
         String playersName = null;
-        Scanner keyboard = new Scanner(System.in);
+       try{
 
         while (!valid) {
 
-            System.out.println("Enter the player's name below:");
-
-            playersName = keyboard.nextLine();
+            playersName = this.keyboard.readLine();
             playersName = playersName.trim();
 
             if (playersName.length() < 2) {
-                System.out.println("Invalid name - the name must not be blank");
+                this.console.println("Invalid name - the name must not be blank");
                 continue;
             }
             break;
         }
+       }catch (Exception e){
+           this.console.println("Errore reading input:" + e.getMessage());
+       }
         return playersName;
     }
 
     protected void displayWelcomeMessage(Player player) {
-        System.out.println("\n\n=============================================");
-        System.out.println("\tWelcome to the game " + player.getName());
-        System.out.println("\tWe hope you have a lot of fun!");
-        System.out.println("=================================================");
+       this.console.println("\n\n=============================================");
+        this.console.println("\tWelcome to the game " + player.getName());
+        this.console.println("\tWe hope you have a lot of fun!");
+       this.console.println("=================================================");
     }
 
 }

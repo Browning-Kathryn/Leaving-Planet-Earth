@@ -5,12 +5,17 @@
  * and open the template in the editor.
  */
 package byui.cit260.leavingPlanetEarth.model;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.io.Serializable;
+import leavingplanetearth.LeavingPlanetEarth;
 /**
  *
  * @author Student
  */
 public class Map implements Serializable{
+      protected final BufferedReader keyboard = LeavingPlanetEarth.getinFile();
+    protected final PrintWriter console = LeavingPlanetEarth.getOutFile();
 private double rowCount;
 private double columnCount;
 private Location [][] locations;
@@ -20,7 +25,7 @@ private Location [][] locations;
     }
     public Map(int rowCount, int columnCount){
         if(rowCount < 1 || columnCount < 1){
-            System.out.println("The number of rows and columns must be greater than 0");
+            this.console.println("The number of rows and columns must be greater than 0");
             return;
         }
         this.rowCount = 4;
