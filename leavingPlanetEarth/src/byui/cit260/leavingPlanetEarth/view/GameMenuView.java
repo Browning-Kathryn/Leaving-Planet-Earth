@@ -10,6 +10,7 @@ import byui.cit260.leavingPlanetEarth.model.Location;
 import byui.cit260.leavingPlanetEarth.model.Scene;
 import byui.cit260.leavingPlanetEart.control.InventoryControl;
 import byui.cit260.leavingPlanetEart.control.MapControl;
+import byui.cit260.leavingPlanetEart.control.leavingPlanetEarth;
 import byui.cit260.leavingPlanetEarth.enums.Actor;
 import byui.cit260.leavingPlanetEarth.exceptions.MapControlException;
 import byui.cit260.leavingPlanetEarth.model.Game;
@@ -36,6 +37,7 @@ public class GameMenuView extends View {
                 + "\nV - View Map"
                 + "\nC - Construct Shelter"
                 + "\nI - View inventory for food"
+                + "\nF - Get list of inventory items"
                 + "\nX - Check progress on a rocket ship"
                 + "\nM - Move Person"
                 + "\nS - Sleep"
@@ -72,6 +74,9 @@ try{
                 break;
             case 'I':
                 this.viewInventory();
+                break;
+            case 'F':
+                this.inventoryList();
                 break;
             case 'X':
                 this.checkProgress();
@@ -180,6 +185,7 @@ try{
    
    
     }
+ 
 
     private void checkProgress() {
         this.console.println("*** Check Progress ***");
@@ -237,5 +243,33 @@ try{
      
       
     }
+
+    private void inventoryList(PrintWriter out) {
+         InventoryItem[] inventory = GameControl.getSortedInventoryList();
+        
+        out.println("\n        LIST OF INVENTORY ITEMS");
+        StringBuilder line = new StringBuilder("                                                          ");
+        line.insert(0, "DESCRIPTION"); 
+        line.insert(20, "REQUIRED");
+        line.insert(30, "IN STOCK");
+        out.println(line.toString());
+        
+        // for each inventory item
+        for (InventoryItem inventoryItem : inventory) {
+            line = new StringBuilder("                                                          ");
+            line.insert(0, inventoryItem.getDescription());
+            line.insert(23, inventoryItem.getRequireAmount());
+            line.insert(33, inventoryItem.getQuantityInStock());
+            
+            // DISPLAY the description, the required amount and amount in stock
+            out.println(line.toString());
+        } 
+    }
+
+    private void inventoryList() {
+      
+    }
+
+   
 
 }
