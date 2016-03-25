@@ -23,9 +23,9 @@ import java.util.logging.Level;
  */
 public class leavingPlanetEarth{
 
-    private static Game currentGame = null;
+    private static byui.cit260.leavingPlanetEarth.model.Game currentGame = null;
     private static Player player = null;
-    private static Input input = null;
+    private static jdk.internal.util.xml.impl.Input input = null;
 
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
@@ -42,9 +42,10 @@ public class leavingPlanetEarth{
 
             String filePath = "log.txt";
             leavingPlanetEarth.logFile = new PrintWriter(filePath);
-        }
+        
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.startProgram();
+    
         return;
 
     }catch (Throwable e){
@@ -55,7 +56,7 @@ public class leavingPlanetEarth{
 
         e.printStackTrace();;
     }
-    finally{
+    finally {
         try{
             if(leavingPlanetEarth.inFile !=null)
                 leavingPlanetEarth.inFile.close();
@@ -69,30 +70,45 @@ public class leavingPlanetEarth{
             System.out.println("Error closing files");
             return;
         }      
-        }
-
-   public static void setCurrentGame(Game game) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+     }
+    }
+    public static void setCurrentGame(byui.cit260.leavingPlanetEarth.model.Game game) {
+       leavingPlanetEarth.currentGame =  currentGame;
     }
 
-    public static Game getCurrentGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static byui.cit260.leavingPlanetEarth.model.Game getCurrentGame() {
+        return currentGame;
     }
 
     static void setPlayer(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        leavingPlanetEarth.player = player;
     }
+   
+    public static void setInFile() {
+        leavingPlanetEarth.inFile = inFile;
+    }
+    
 
     public static PrintWriter getOutFile() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return outFile;
     }
-
+ public static void setOutFile(PrintWriter OutFile){
+        leavingPlanetEarth.outFile = outFile;
+ }
     public static PrintWriter getLogFile() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return logFile;
+    }
+    public static void setLogFile(PrintWriter logFile){
+        leavingPlanetEarth.logFile = logFile;
     }
 
     public static Player getPlayer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      return player;
+    }
+
+    public static BufferedReader getinFile() {
+       return inFile;
     }
 
 }

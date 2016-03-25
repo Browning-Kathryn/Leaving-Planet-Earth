@@ -45,9 +45,10 @@ public class leavingPlanetEarth{
 
             String filePath = "log.txt";
             leavingPlanetEarth.logFile = new PrintWriter(filePath);
-        }
+        
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.startProgram();
+    
         return;
 
     }catch (Throwable e){
@@ -72,19 +73,25 @@ public class leavingPlanetEarth{
             System.out.println("Error closing files");
             return;
         }      
-        }
-
+        
+     }
+    }
     public static void setCurrentGame(byui.cit260.leavingPlanetEarth.model.Game game) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       leavingPlanetEarth.currentGame =  currentGame;
     }
 
     public static byui.cit260.leavingPlanetEarth.model.Game getCurrentGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return currentGame;
     }
 
     static void setPlayer(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        leavingPlanetEarth.player = player;
     }
+   
+    public static void setInFile() {
+        leavingPlanetEarth.inFile = inFile;
+    }
+    
 
     public static PrintWriter getOutFile() {
        return outFile;
@@ -100,7 +107,11 @@ public class leavingPlanetEarth{
     }
 
     public static Player getPlayer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      return player;
+    }
+
+    public static BufferedReader getinFile() {
+       return inFile;
     }
 
 }
