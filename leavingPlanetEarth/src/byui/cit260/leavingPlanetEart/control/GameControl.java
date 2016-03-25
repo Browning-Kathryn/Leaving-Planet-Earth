@@ -19,7 +19,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import javafx.scene.Scene;
-import leavingplanetearth.LeavingPlanetEarth;
+import byui.cit260.leavingPlanetEart.control.leavingPlanetEarth;
 
 /**
  *
@@ -28,8 +28,8 @@ import leavingplanetearth.LeavingPlanetEarth;
 public class GameControl {
 
    
-  protected final BufferedReader keyboard = LeavingPlanetEarth.getinFile();
-    protected final PrintWriter console = LeavingPlanetEarth.getOutFile();
+  protected final BufferedReader keyboard = leavingPlanetEarth.getinFile();
+    protected final PrintWriter console = leavingPlanetEarth.getOutFile();
     public GameControl() {
     }
      public static void saveGame(Game game, String filePath) 

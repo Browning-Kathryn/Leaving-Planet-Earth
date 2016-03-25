@@ -19,15 +19,14 @@ import byui.cit260.leavingPlanetEarth.view.MapView;
 import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
-import leavingplanetearth.LeavingPlanetEarth;
 
 /**
  *
  * @author OptimusPrime
  */
 public class GameMenuView extends View {
-     protected final BufferedReader keyboard = LeavingPlanetEarth.getinFile();
-    protected final PrintWriter console = LeavingPlanetEarth.getOutFile();
+     protected final BufferedReader keyboard = leavingPlanetEarth.getinFile();
+    protected final PrintWriter console = leavingPlanetEarth.getOutFile();
 
     public GameMenuView() {
         super("\n"

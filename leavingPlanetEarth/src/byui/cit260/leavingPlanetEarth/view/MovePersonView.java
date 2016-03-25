@@ -6,6 +6,7 @@
 package byui.cit260.leavingPlanetEarth.view;
 
 import byui.cit260.leavingPlanetEart.control.MapControl;
+import byui.cit260.leavingPlanetEart.control.leavingPlanetEarth;
 import byui.cit260.leavingPlanetEarth.exceptions.MapControlException;
 import byui.cit260.leavingPlanetEarth.enums.Actor;
 import byui.cit260.leavingPlanetEarth.model.Game;
@@ -13,15 +14,14 @@ import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.Scanner;
-import leavingplanetearth.LeavingPlanetEarth;
 
 /**
  *
  * @author OptimusPrime
  */
 public class MovePersonView extends View {
-  protected final BufferedReader keyboard = LeavingPlanetEarth.getinFile();
-    protected final PrintWriter console = LeavingPlanetEarth.getOutFile();
+  protected final BufferedReader keyboard = leavingPlanetEarth.getinFile();
+    protected final PrintWriter console = leavingPlanetEarth.getOutFile();
     public MovePersonView() {
         super("\n"
                 + "\n---------------------------------------------------"

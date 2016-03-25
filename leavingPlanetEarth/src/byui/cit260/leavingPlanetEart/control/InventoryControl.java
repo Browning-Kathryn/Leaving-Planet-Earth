@@ -7,14 +7,14 @@ package byui.cit260.leavingPlanetEart.control;
 import byui.cit260.leavingPlanetEarth.model.InventoryItem;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
-import leavingplanetearth.LeavingPlanetEarth;
+import byui.cit260.leavingPlanetEart.control.leavingPlanetEarth;
 /**
  *
  * @author OptimusPrime
  */
 public class InventoryControl {
-      protected final BufferedReader keyboard = LeavingPlanetEarth.getinFile();
-    protected final PrintWriter console = LeavingPlanetEarth.getOutFile();
+      protected final BufferedReader keyboard = leavingPlanetEarth.getinFile();
+    protected final PrintWriter console = leavingPlanetEarth.getOutFile();
     public double calcFuelNeeded(double distance, double mpg, String fuel){
         if (distance <= 0){
         return -1;

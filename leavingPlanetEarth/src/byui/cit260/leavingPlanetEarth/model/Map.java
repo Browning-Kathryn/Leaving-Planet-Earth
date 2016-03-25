@@ -5,17 +5,17 @@
  * and open the template in the editor.
  */
 package byui.cit260.leavingPlanetEarth.model;
+import byui.cit260.leavingPlanetEart.control.leavingPlanetEarth;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.io.Serializable;
-import leavingplanetearth.LeavingPlanetEarth;
 /**
  *
  * @author Student
  */
 public class Map implements Serializable{
-      protected final BufferedReader keyboard = LeavingPlanetEarth.getinFile();
-    protected final PrintWriter console = LeavingPlanetEarth.getOutFile();
+      protected final BufferedReader keyboard = leavingPlanetEarth.getinFile();
+    protected final PrintWriter console = leavingPlanetEarth.getOutFile();
 private double rowCount;
 private double columnCount;
 private Location [][] locations;

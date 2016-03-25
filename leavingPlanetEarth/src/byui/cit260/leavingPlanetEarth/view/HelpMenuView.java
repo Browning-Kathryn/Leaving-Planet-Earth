@@ -8,15 +8,15 @@ package byui.cit260.leavingPlanetEarth.view;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.Scanner;
-import leavingplanetearth.LeavingPlanetEarth;
+import byui.cit260.leavingPlanetEart.control.leavingPlanetEarth;
 
 /**
  *
  * @author OptimusPrime
  */
 public class HelpMenuView extends View {
-  protected final BufferedReader keyboard = LeavingPlanetEarth.getinFile();
-    protected final PrintWriter console = LeavingPlanetEarth.getOutFile();
+  protected final BufferedReader keyboard = leavingPlanetEarth.getinFile();
+    protected final PrintWriter console = leavingPlanetEarth.getOutFile();
     public HelpMenuView() {
         super("\n"
                 + "\n---------------------------------------------------"
