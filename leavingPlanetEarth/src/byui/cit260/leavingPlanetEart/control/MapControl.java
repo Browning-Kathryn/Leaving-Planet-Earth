@@ -7,7 +7,7 @@ import byui.cit260.leavingPlanetEarth.model.Location;
 import byui.cit260.leavingPlanetEarth.model.Scene;
 import byui.cit260.leavingPlanetEarth.enums.Actor;
 import byui.cit260.leavingPlanetEarth.exceptions.MapControlException;
-
+import leavingPlanetEarth.LeavingPlanetEarth;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,7 +27,7 @@ public class MapControl {
     }
 
     private static Scene[] createScenes() {
-        Game game = leavingPlanetEarth.getCurrentGame();
+        Game game = LeavingPlanetEarth.getCurrentGame();
 
         Scene[] scenes = new Scene[SceneType.values().length];
 
@@ -84,7 +84,7 @@ public class MapControl {
 
     public static void moveActorsToStartingLocation(Map map, Actor[] actors) 
                     throws MapControlException{
-        Game game = leavingPlanetEarth.getCurrentGame();
+        Game game = LeavingPlanetEarth.getCurrentGame();
         for (Actor actor : actors) {
             Point position = new Point(2, 2);
             game.getActorsLocation()[actor.ordinal()] = new Point();
@@ -96,7 +96,7 @@ public class MapControl {
 
     public static void moveActorToLocation(Game game, Actor actor, Point position)
                     throws MapControlException{
-        Map map =leavingPlanetEarth.getCurrentGame().getMap();
+        Map map =LeavingPlanetEarth.getCurrentGame().getMap();
         int newRow = position.x-1;
         int newColumn = position.y-1;
         

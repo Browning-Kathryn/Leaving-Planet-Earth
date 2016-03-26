@@ -19,7 +19,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import javafx.scene.Scene;
-import byui.cit260.leavingPlanetEart.control.leavingPlanetEarth;
+import leavingPlanetEarth.LeavingPlanetEarth;
 
 /**
  *
@@ -28,8 +28,8 @@ import byui.cit260.leavingPlanetEart.control.leavingPlanetEarth;
 public class GameControl {
 
    
-  protected final BufferedReader keyboard = leavingPlanetEarth.getinFile();
-    protected final PrintWriter console = leavingPlanetEarth.getOutFile();
+  protected final BufferedReader keyboard = LeavingPlanetEarth.getinFile();
+    protected final PrintWriter console = LeavingPlanetEarth.getOutFile();
     public GameControl() {
     }
      public static void saveGame(Game game, String filePath) 
@@ -62,7 +62,7 @@ public class GameControl {
         throws MapControlException{
 
         Game game = new Game();
-        leavingPlanetEarth.setCurrentGame(game);
+        LeavingPlanetEarth.setCurrentGame(game);
 
         game.setPlayer(player);
 

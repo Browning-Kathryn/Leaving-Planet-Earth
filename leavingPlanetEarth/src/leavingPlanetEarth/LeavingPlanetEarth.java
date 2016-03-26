@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.leavingPlanetEart.control;
+package leavingPlanetEarth;
 
 import byui.cit260.leavingPlanetEarth.model.Player;
 import byui.cit260.leavingPlanetEarth.view.StartProgramView;
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -17,14 +16,8 @@ import java.io.PrintWriter;
  *
  * @author OptimusPrime
  */
-
-
-
-/**
- *
- * @author OptimusPrime
- */
-public class leavingPlanetEarth{
+public class LeavingPlanetEarth {
+    
 
     private static byui.cit260.leavingPlanetEarth.model.Game currentGame = null;
     private static Player player = null;
@@ -38,13 +31,13 @@ public class leavingPlanetEarth{
     public static void main(String[] args){
      try {
 
-           leavingPlanetEarth.inFile
+           LeavingPlanetEarth.inFile
                     = new BufferedReader(new InputStreamReader(System.in));
 
-            leavingPlanetEarth.outFile = new PrintWriter(System.out, true);
+            LeavingPlanetEarth.outFile = new PrintWriter(System.out, true);
 
             String filePath = "log.txt";
-            leavingPlanetEarth.logFile = new PrintWriter(filePath);
+            LeavingPlanetEarth.logFile = new PrintWriter(filePath);
         
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.startProgram();
@@ -61,14 +54,14 @@ public class leavingPlanetEarth{
     }
     finally {
         try{
-            if(leavingPlanetEarth.inFile !=null)
-                leavingPlanetEarth.inFile.close();
+            if(LeavingPlanetEarth.inFile !=null)
+                LeavingPlanetEarth.inFile.close();
             
-            if(leavingPlanetEarth.outFile !=null)
-               leavingPlanetEarth.outFile.close();
+            if(LeavingPlanetEarth.outFile !=null)
+               LeavingPlanetEarth.outFile.close();
             
-            if(leavingPlanetEarth.logFile != null)
-                leavingPlanetEarth.logFile.close();
+            if(LeavingPlanetEarth.logFile != null)
+                LeavingPlanetEarth.logFile.close();
         }catch(IOException ex){
             System.out.println("Error closing files");
             return;
@@ -77,19 +70,19 @@ public class leavingPlanetEarth{
      }
     }
     public static void setCurrentGame(byui.cit260.leavingPlanetEarth.model.Game game) {
-       leavingPlanetEarth.currentGame =  currentGame;
+       LeavingPlanetEarth.currentGame =  currentGame;
     }
 
     public static byui.cit260.leavingPlanetEarth.model.Game getCurrentGame() {
         return currentGame;
     }
 
-    static void setPlayer(Player player) {
-        leavingPlanetEarth.player = player;
+    public static void setPlayer(Player player) {
+        LeavingPlanetEarth.player = player;
     }
    
     public static void setInFile() {
-        leavingPlanetEarth.inFile = inFile;
+        LeavingPlanetEarth.inFile = inFile;
     }
     
 
@@ -97,13 +90,13 @@ public class leavingPlanetEarth{
        return outFile;
     }
  public static void setOutFile(PrintWriter OutFile){
-        leavingPlanetEarth.outFile = outFile;
+        LeavingPlanetEarth.outFile = outFile;
  }
     public static PrintWriter getLogFile() {
         return logFile;
     }
     public static void setLogFile(PrintWriter logFile){
-        leavingPlanetEarth.logFile = logFile;
+        LeavingPlanetEarth.logFile = logFile;
     }
 
     public static Player getPlayer() {
@@ -178,4 +171,3 @@ public class leavingPlanetEarth{
     
     
     
-  

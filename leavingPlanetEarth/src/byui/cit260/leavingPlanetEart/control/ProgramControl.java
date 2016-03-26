@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.leavingPlanetEart.control;
-
+import leavingPlanetEarth.LeavingPlanetEarth;
 import byui.cit260.leavingPlanetEarth.model.Player;
 
 /**
@@ -20,8 +20,9 @@ public class ProgramControl {
         }
         Player player = new Player();
         player.setName(name);
+      
 
-        leavingPlanetEarth.setPlayer(player);
+        LeavingPlanetEarth.setPlayer(player);
 
         return player;
     }

@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.leavingPlanetEarth.view;
-
-import byui.cit260.leavingPlanetEart.control.leavingPlanetEarth;
+import leavingPlanetEarth.LeavingPlanetEarth;
 import java.io.PrintWriter;
 
 /**
@@ -14,8 +13,8 @@ import java.io.PrintWriter;
  */
 public class ErrorView {
     
-    private static final PrintWriter errorFile = leavingPlanetEarth.getOutFile();
-    private static final PrintWriter logFile = leavingPlanetEarth.getLogFile();
+    private static final PrintWriter errorFile = LeavingPlanetEarth.getOutFile();
+    private static final PrintWriter logFile = LeavingPlanetEarth.getLogFile();
     
     public static void display(String className, String errorMessage){
         errorFile.println(

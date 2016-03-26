@@ -4,13 +4,12 @@
  * and open the template in the editor.
  */
 package byui.cit260.leavingPlanetEarth.view;
-
+import leavingPlanetEarth.LeavingPlanetEarth;
 import byui.cit260.leavingPlanetEart.control.GameControl;
 import byui.cit260.leavingPlanetEarth.model.Location;
 import byui.cit260.leavingPlanetEarth.model.Scene;
 import byui.cit260.leavingPlanetEart.control.InventoryControl;
 import byui.cit260.leavingPlanetEart.control.MapControl;
-import byui.cit260.leavingPlanetEart.control.leavingPlanetEarth;
 import byui.cit260.leavingPlanetEarth.enums.Actor;
 import byui.cit260.leavingPlanetEarth.exceptions.MapControlException;
 import byui.cit260.leavingPlanetEarth.model.Game;
@@ -25,8 +24,8 @@ import java.io.PrintWriter;
  * @author OptimusPrime
  */
 public class GameMenuView extends View {
-     protected final BufferedReader keyboard = leavingPlanetEarth.getinFile();
-    protected final PrintWriter console = leavingPlanetEarth.getOutFile();
+     protected final BufferedReader keyboard = LeavingPlanetEarth.getinFile();
+    protected final PrintWriter console = LeavingPlanetEarth.getOutFile();
 
     public GameMenuView() {
         super("\n"

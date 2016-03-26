@@ -8,7 +8,7 @@ package byui.cit260.leavingPlanetEarth.view;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.Scanner;
-import byui.cit260.leavingPlanetEart.control.leavingPlanetEarth;
+import leavingPlanetEarth.LeavingPlanetEarth;
 
 /**
  *
@@ -18,8 +18,8 @@ public abstract class View implements ViewInterface {
 
     protected String displayMessage;
     
-    protected final BufferedReader keyboard = leavingPlanetEarth.getinFile();
-    protected final PrintWriter console = leavingPlanetEarth.getOutFile();
+    protected final BufferedReader keyboard = LeavingPlanetEarth.getinFile();
+    protected final PrintWriter console = LeavingPlanetEarth.getOutFile();
 
     public View() {
     }

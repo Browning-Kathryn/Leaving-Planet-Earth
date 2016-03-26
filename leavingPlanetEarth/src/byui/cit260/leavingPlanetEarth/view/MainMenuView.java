@@ -6,8 +6,7 @@
 package byui.cit260.leavingPlanetEarth.view;
 
 import byui.cit260.leavingPlanetEart.control.GameControl;
-import byui.cit260.leavingPlanetEart.control.leavingPlanetEarth;
-
+import leavingPlanetEarth.LeavingPlanetEarth;
 import byui.cit260.leavingPlanetEarth.exceptions.MapControlException;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
@@ -20,8 +19,8 @@ import java.util.logging.Logger;
  * @author OptimusPrime
  */
 public class MainMenuView extends View {
-  protected final BufferedReader keyboard = leavingPlanetEarth.getinFile();
-    protected final PrintWriter console = leavingPlanetEarth.getOutFile();
+  protected final BufferedReader keyboard = LeavingPlanetEarth.getinFile();
+    protected final PrintWriter console = LeavingPlanetEarth.getOutFile();
     public MainMenuView() {
         super("\n"
                 + "\n---------------------------------------------------"
@@ -67,7 +66,7 @@ public class MainMenuView extends View {
     }
 
     private void startNewGame() throws MapControlException {
-        GameControl.createNewGame(leavingPlanetEarth.getPlayer());
+        GameControl.createNewGame(LeavingPlanetEarth.getPlayer());
  
         GameMenuView Menu = new GameMenuView();
         Menu.display();
@@ -103,7 +102,7 @@ public class MainMenuView extends View {
         
         try {
             
-            GameControl.saveGame(leavingPlanetEarth.getCurrentGame(), filePath);
+            GameControl.saveGame(LeavingPlanetEarth.getCurrentGame(), filePath);
         } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
