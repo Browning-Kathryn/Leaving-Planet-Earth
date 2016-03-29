@@ -33,7 +33,10 @@ public class HelpMenuView extends View {
 
     }
 
-    public void doAction(char selection) {
+    public boolean doAction(Object obj) {
+         String value = (String) obj;
+        value = value.toUpperCase(); // convert to all upper case
+        char selection = value.charAt(0); 
 
         switch (selection) {
             case 'M':
@@ -55,12 +58,12 @@ public class HelpMenuView extends View {
                 this.returnMain();
                 break;
             case 'E':
-                return;
+                return true;
             default:
                 this.console.println("\n*** Invalid selection *** Try Again");
                 break;
         }
-
+return false;
     }
 
     private void startMove() {

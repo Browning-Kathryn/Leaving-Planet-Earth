@@ -54,7 +54,10 @@ public class GameMenuView extends View {
     }
 
     @Override
-    public void doAction(char selection) {
+    public boolean doAction(Object obj) {
+         String value = (String) obj;
+        value = value.toUpperCase(); // convert to all upper case
+        char selection = value.charAt(0); 
       Actor actor = null;
         Game game = null;
         Point position = null;
@@ -113,12 +116,12 @@ try{
                 this.returnMain();
                 break;
             case 'E':
-                return;
+                return true;
             default:
                 this.console.println("\n*** Invalid selection *** Try Again");
                 break;
         }
-
+return false;
     }
 
     private void viewMap(PrintWriter out) {

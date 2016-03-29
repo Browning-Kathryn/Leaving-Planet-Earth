@@ -15,6 +15,6 @@ public interface ViewInterface {
 
     public String getInput();
 
-    public void doAction(char selection);
+    public boolean doAction(Object obj);
 
 }

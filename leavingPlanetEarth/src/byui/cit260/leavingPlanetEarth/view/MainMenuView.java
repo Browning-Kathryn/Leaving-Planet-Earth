@@ -35,17 +35,14 @@ public class MainMenuView extends View {
 
     }
 
-    public void doAction(char selection) {
+    public boolean doAction(Object obj) {
+         String value = (String) obj;
+        value = value.toUpperCase(); // convert to all upper case
+        char selection= value.charAt(0); 
 
         switch (selection) {
             case 'N':
-        {
-            try {
-                this.startNewGame();
-            } catch (MapControlException ex) {
-                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+              this.startNewGame();
                 break;
             case 'G':
                 this.startExistingGame();
@@ -57,16 +54,22 @@ public class MainMenuView extends View {
                 this.saveGame();
                 break;
             case 'E':
-                return;
+                return true;
             default:
                 ErrorView.display("MainMenuView","*** Invalid selection *** Try again");
                 break;
         }
-
+return false;
     }
 
-    private void startNewGame() throws MapControlException {
-        GameControl.createNewGame(LeavingPlanetEarth.getPlayer());
+    private void startNewGame()  {
+       
+        try{
+            GameControl.createNewGame(LeavingPlanetEarth.getPlayer());
+        }catch (MapControlException mce){
+            ErrorView.display("MainMenuView", mce.getMessage());
+            return;
+        }
  
         GameMenuView Menu = new GameMenuView();
         Menu.display();
@@ -107,5 +110,7 @@ public class MainMenuView extends View {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
     }
+
+  
 
 }

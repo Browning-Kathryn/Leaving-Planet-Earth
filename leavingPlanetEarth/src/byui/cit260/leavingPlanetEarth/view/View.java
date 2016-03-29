@@ -45,18 +45,18 @@ public abstract class View implements ViewInterface {
         this.promptMessage = message;
     }
     
-    @Override
+ 
     public void display() {
-        String selection= "";
+        String value = "";
         boolean done = false;
         
         do { 
             this.console.println(this.promptMessage); // display the prompt promptMessage
             if (this.input) {
-                selection = this.getInput(); // get the user's selection
+                value = this.getInput(); // get the user's selection
             }
 
-            done = this.doAction(selection); // do action based on selection        
+            done = this.doAction(value); // do action based on selection        
         } while (!done);
 
     }
