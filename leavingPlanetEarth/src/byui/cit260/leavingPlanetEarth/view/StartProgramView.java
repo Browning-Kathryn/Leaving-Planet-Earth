@@ -66,7 +66,7 @@ public class StartProgramView {
 
         this.console.println("*                                            *"
                 + "\n* Good luck and if all goes well we will see you on  *"
-                + "\n*  Planet Nefthtar                                    *"
+                + "\n*  Planet Nefthtar.Please Enter your name            *"
                 + "n*                                                     *");
 
         this.console.println("**********************************************");

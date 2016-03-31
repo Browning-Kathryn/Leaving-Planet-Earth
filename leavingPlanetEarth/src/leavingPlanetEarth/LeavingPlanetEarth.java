@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package leavingPlanetEarth;
-
+import byui.cit260.leavingPlanetEarth.model.Game;
 import byui.cit260.leavingPlanetEarth.model.Player;
 import byui.cit260.leavingPlanetEarth.view.StartProgramView;
 import java.io.BufferedReader;
@@ -19,7 +19,7 @@ import java.io.PrintWriter;
 public class LeavingPlanetEarth {
     
 
-    private static byui.cit260.leavingPlanetEarth.model.Game currentGame = null;
+    private static Game currentGame = null;
     private static Player player = null;
     private static jdk.internal.util.xml.impl.Input input = null;
 
@@ -69,11 +69,11 @@ public class LeavingPlanetEarth {
         
      }
     }
-    public static void setCurrentGame(byui.cit260.leavingPlanetEarth.model.Game game) {
+    public static void setCurrentGame(Game currentGame) {
        LeavingPlanetEarth.currentGame =  currentGame;
     }
 
-    public static byui.cit260.leavingPlanetEarth.model.Game getCurrentGame() {
+    public static Game getCurrentGame() {
         return currentGame;
     }
 
